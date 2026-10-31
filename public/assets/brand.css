@@ -121,3 +121,27 @@ body:not(.subpage) #header-wrapper { position: relative; }
 .member-media, .member-media img { border-radius: 0 !important; }
 .member-body h3 { margin: 0 0 .25em !important; }
 .member-body p.member-sub { margin: 0 0 .9em !important; font-size: .85em !important; font-weight: 700 !important; letter-spacing: .08em; text-transform: uppercase; color: #7a6a1f !important; }
+
+/* ===== Site-wide type system: navy headings, near-black body ===== */
+:root { --ink: #1a1a1a; --navy: #00274c; }
+#main-wrapper h1, #main-wrapper h2, #main-wrapper header h2, #main-wrapper .member-head h2,
+#main-wrapper .box h2, #main-wrapper .feature1 h2, #main-wrapper .feature2 h2 {
+  color: var(--navy) !important; font-size: 32px !important; line-height: 1.2 !important; font-weight: 800 !important;
+  text-transform: uppercase !important; letter-spacing: .02em !important; text-align: center; margin: 0 0 .6em !important; }
+#main-wrapper h3, #main-wrapper h4, #main-wrapper .member-body h3, #main-wrapper header h3 {
+  color: var(--navy) !important; font-weight: 800 !important; }
+#main-wrapper .member-body h3 { font-size: 21px !important; text-transform: none !important; }
+#main-wrapper p:not(.member-sub), #main-wrapper li, #main-wrapper strong, #main-wrapper b, #main-wrapper em, #main-wrapper td, #main-wrapper span:not(.member-sub) { color: var(--ink) !important; }
+#main-wrapper p:not(.member-sub):not(.hero-cta-text) { font-weight: 400 !important; font-size: 15.5px !important; line-height: 1.7 !important; }
+#main-wrapper strong, #main-wrapper b { font-weight: 700 !important; }
+#main-wrapper .first.major p, #main-wrapper .member-head p { font-size: 16.5px !important; font-weight: 400 !important; color: var(--ink) !important; text-align: center; }
+@media (min-width: 900px) { .member-head p { white-space: normal !important; font-size: 16.5px !important; } }
+#main-wrapper a:not(.join-btn):not(.member-link) { color: #00274c; }
+@media (max-width: 736px) { #main-wrapper h2, #main-wrapper .member-head h2 { font-size: 24px !important; } }
+#main-wrapper .member-head p:not(.x) { font-size: 16.5px !important; }
+#main-wrapper h3, #main-wrapper header h3, #main-wrapper .member-body h3, #main-wrapper h3 a { font-size: 21px !important; text-transform: none !important; letter-spacing: 0 !important; color: var(--navy) !important; line-height: 1.25 !important; }
+#main-wrapper h4 { font-size: 16px !important; text-transform: none !important; }
+
+/* Center the "Interested in Joining?" block */
+.article-list, .article-list h2, .article-list article, .article-list header, .article-list h3, .article-list p, .article-list div { text-align: center !important; }
+.article-list .excerpt > div { margin: 0 auto; max-width: 40em; }

@@ -54,3 +54,4 @@ body:not(.subpage) .wrapper.style3 > .inner { border-top: 1px solid rgba(0,0,0,0
 #footer-wrapper #footer .site-footer-inner p.sf-legal { max-width: 56em; margin: .5em 0 0 0 !important; }
 #footer-wrapper #footer { width: 100% !important; max-width: 1200px; margin: 0 auto !important; float: none !important; }
 #footer-wrapper #footer .row { margin: 0 !important; width: 100% !important; }
+body.page-about #header-wrapper { background-position: center 21% !important; }

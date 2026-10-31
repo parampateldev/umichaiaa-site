@@ -55,3 +55,17 @@ body:not(.subpage) .wrapper.style3 > .inner { border-top: 1px solid rgba(0,0,0,0
 #footer-wrapper #footer { width: 100% !important; max-width: 1200px; margin: 0 auto !important; float: none !important; }
 #footer-wrapper #footer .row { margin: 0 !important; width: 100% !important; }
 body.page-about #header-wrapper { background-position: center 21% !important; }
+
+/* Join button */
+.join-btn { display: inline-block; padding: .62em 1.35em; border-radius: 999px; background: linear-gradient(180deg, #ffd84a 0%, #ffcb05 100%); color: #00274c !important; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; text-decoration: none !important; text-shadow: none !important; box-shadow: 0 2px 0 #d9a900, 0 6px 14px rgba(255,203,5,.28); transition: transform .15s ease, box-shadow .15s ease, background .15s ease; border: 0; }
+.join-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 0 #d9a900, 0 10px 20px rgba(255,203,5,.4); background: linear-gradient(180deg, #ffe066 0%, #ffd21f 100%); }
+.join-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 #d9a900; }
+.join-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+#nav > ul > li.join-li > a.join-btn { color: #00274c !important; padding: .55em 1.2em !important; margin-left: .6em; font-size: .85em; background: linear-gradient(180deg, #ffd84a 0%, #ffcb05 100%) !important; }
+#nav > ul > li.join-li > a.join-btn:hover { color: #00274c !important; }
+.join-cta { margin-top: .6em; font-size: .95em; }
+#navPanel .join-btn { display: block; margin: .8em 1em; text-align: center; border-radius: 12px; }
+@media (prefers-reduced-motion: reduce) { .join-btn { transition: none; } }
+#nav > ul > li.join-li > a.join-btn { line-height: 1.1 !important; border-radius: 999px !important; vertical-align: middle; height: auto !important; display: inline-block !important; padding: .7em 1.3em !important; }
+#navPanel a.join-btn { line-height: 1.2 !important; border-radius: 12px !important; height: auto !important; }
+.join-cta { line-height: 1.2 !important; border-radius: 999px !important; }

@@ -28,3 +28,12 @@ body:not(.subpage) .feature1 header { margin-bottom: 0 !important; }
 body:not(.subpage) .wrapper.style2:has(.feature2) { padding-bottom: 0 !important; }
 body:not(.subpage) .wrapper.style3 { padding-top: 0 !important; }
 body:not(.subpage) .wrapper.style3 > .inner { border-top: 1px solid rgba(0,0,0,0.12); margin-top: 2.5em; padding-top: 2.5em; }
+
+/* Footer */
+#footer-wrapper .site-footer-inner { text-align: center; padding: 2.5em 1em 2em; color: rgba(255,255,255,.85); }
+#footer-wrapper .site-footer-inner p { margin: 0 0 .9em; text-shadow: none; }
+#footer-wrapper .sf-main { font-size: 1em; font-weight: 600; letter-spacing: .02em; color: #fff; }
+#footer-wrapper .sf-links a { color: #ffcb05; text-decoration: none; margin: 0 .8em; font-size: .9em; white-space: nowrap; }
+#footer-wrapper .sf-links a:hover { text-decoration: underline; }
+#footer-wrapper .sf-legal { font-size: .72em; line-height: 1.5; max-width: 52em; margin: 1.2em auto 0; color: rgba(255,255,255,.6); }
+@media (max-width: 736px) { #footer-wrapper .sf-links a { display: inline-block; margin: .25em .6em; } }

@@ -69,3 +69,13 @@ body.page-about #header-wrapper { background-position: center 21% !important; }
 #nav > ul > li.join-li > a.join-btn { line-height: 1.1 !important; border-radius: 999px !important; vertical-align: middle; height: auto !important; display: inline-block !important; padding: .7em 1.3em !important; }
 #navPanel a.join-btn { line-height: 1.2 !important; border-radius: 12px !important; height: auto !important; }
 .join-cta { line-height: 1.2 !important; border-radius: 999px !important; }
+
+/* Home hero: Join button overlaid on the photo */
+body:not(.subpage) #header-wrapper { position: relative; }
+.hero-cta { position: absolute; left: 0; right: 0; bottom: 0; z-index: 5; text-align: center; padding: 5.5em 1em 2.2em; background: linear-gradient(180deg, rgba(0,20,45,0) 0%, rgba(0,20,45,.72) 100%); pointer-events: none; }
+.hero-cta > * { pointer-events: auto; }
+.hero-cta-text { margin: 0 0 1em; color: #fff; font-size: 1.15em; font-weight: 700; letter-spacing: .04em; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+.join-hero { font-size: 1.25em; padding: .85em 2.4em !important; line-height: 1.2 !important; border-radius: 999px !important; }
+.join-hero span { display: inline-block; transition: transform .15s ease; }
+.join-hero:hover span { transform: translateX(4px); }
+@media (max-width: 736px) { .hero-cta { padding: 3em 1em 1.2em; } .hero-cta-text { font-size: .95em; } .join-hero { font-size: 1.05em; padding: .8em 1.8em !important; } }

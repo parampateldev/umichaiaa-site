@@ -145,3 +145,13 @@ body:not(.subpage) #header-wrapper { position: relative; }
 /* Center the "Interested in Joining?" block */
 .article-list, .article-list h2, .article-list article, .article-list header, .article-list h3, .article-list p, .article-list div { text-align: center !important; }
 .article-list .excerpt > div { margin: 0 auto; max-width: 40em; }
+
+/* "Interested in joining" + "Follow us": two equal centered columns, same width as the cards above */
+body:not(.subpage) .wrapper.style3 > .inner { max-width: 1100px !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; }
+body:not(.subpage) .wrapper.style3 .container { width: 100% !important; max-width: 100% !important; margin: 0 auto !important; padding: 0 !important; }
+body:not(.subpage) .wrapper.style3 .container > .row { display: grid !important; grid-template-columns: 1fr 1fr; gap: 0 3em; margin: 0 !important; width: 100% !important; }
+body:not(.subpage) .wrapper.style3 .container > .row > [class*="col-"] { width: 100% !important; max-width: 100% !important; margin: 0 !important; padding: 0 1em !important; float: none !important; }
+body:not(.subpage) .wrapper.style3 .box { margin: 0 auto !important; text-align: center; }
+body:not(.subpage) .wrapper.style3 .spotlight > article > div { display: flex; justify-content: center; align-items: center; gap: 20px; }
+body:not(.subpage) .wrapper.style3 p { max-width: 34em; margin-left: auto !important; margin-right: auto !important; }
+@media (max-width: 736px) { body:not(.subpage) .wrapper.style3 .container > .row { grid-template-columns: 1fr; } }

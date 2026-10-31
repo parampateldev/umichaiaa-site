@@ -23,3 +23,8 @@ body.subpage #main-wrapper, body.subpage #main { margin-top: 0; }
 body:not(.subpage) .wrapper.style2:has(.feature1) { padding-bottom: 0 !important; }
 body:not(.subpage) .wrapper.style2:has(.feature2) { padding-top: 2.5em !important; }
 body:not(.subpage) .feature1 header { margin-bottom: 0 !important; }
+
+/* Home: close gap above "Interested in joining / Follow us" and add a divider like the other sections */
+body:not(.subpage) .wrapper.style2:has(.feature2) { padding-bottom: 0 !important; }
+body:not(.subpage) .wrapper.style3 { padding-top: 0 !important; }
+body:not(.subpage) .wrapper.style3 > .inner { border-top: 1px solid rgba(0,0,0,0.12); margin-top: 2.5em; padding-top: 2.5em; }

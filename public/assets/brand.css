@@ -107,3 +107,6 @@ body:not(.subpage) #header-wrapper { position: relative; }
 .member-link:hover { color: #00274c; background: #fff4c2; }
 @media (max-width: 736px) { .member-grid { grid-template-columns: 1fr; } .member-head h2 { font-size: 1.9em !important; } }
 @media (prefers-reduced-motion: reduce) { .member-card, .member-media img { transition: none; } }
+.member-grid { grid-auto-rows: 1fr; }
+.member-card { height: 100%; }
+.member-body p { margin-bottom: 0 !important; }

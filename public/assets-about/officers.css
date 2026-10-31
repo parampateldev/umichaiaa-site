@@ -1851,7 +1851,7 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		background: url("http://i.imgur.com/AwQIBE5.jpg?1"), url("http://i.imgur.com/AwQIBE5.jpg?1"); /* CONTROLS BANNER PHOTO */
+		background: url("https://i.imgur.com/AwQIBE5.jpg"), url("https://i.imgur.com/AwQIBE5.jpg"); /* CONTROLS BANNER PHOTO */
 		background-position: center;
 		background-size: cover;
 		padding: 0 0;

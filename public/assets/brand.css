@@ -14,7 +14,7 @@
 @media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
 
 /* Inner pages: no hero photo, content first */
-body.subpage #header-wrapper { background: linear-gradient(180deg, #0b2545 0%, #13315c 100%) !important; padding: 1.25em 0 1.25em !important; height: auto !important; }
+body.subpage #header-wrapper { background-color: #13315c; background-position: center 30% !important; background-size: cover !important; padding: 1.5em 0 !important; height: auto !important; }
 body.subpage #banner { display: none !important; }
 body.subpage #header { margin-bottom: 0 !important; }
 body.subpage #main-wrapper, body.subpage #main { margin-top: 0; }

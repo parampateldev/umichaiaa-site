@@ -18,3 +18,8 @@ body.subpage #header-wrapper { background: linear-gradient(180deg, #0b2545 0%, #
 body.subpage #banner { display: none !important; }
 body.subpage #header { margin-bottom: 0 !important; }
 body.subpage #main-wrapper, body.subpage #main { margin-top: 0; }
+
+/* Home: tighten gap between "So what are we about?" and "What can you do as a member?" */
+body:not(.subpage) .wrapper.style2:has(.feature1) { padding-bottom: 0 !important; }
+body:not(.subpage) .wrapper.style2:has(.feature2) { padding-top: 2.5em !important; }
+body:not(.subpage) .feature1 header { margin-bottom: 0 !important; }

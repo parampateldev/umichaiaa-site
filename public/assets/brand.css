@@ -113,3 +113,4 @@ body:not(.subpage) #header-wrapper { position: relative; }
 .member-head { text-align: center !important; }
 .member-head h2, .member-head p { text-align: center !important; margin-left: auto !important; margin-right: auto !important; }
 .member-head p { max-width: 40em; }
+.member-head p { max-width: 64em !important; }

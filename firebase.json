@@ -1,7 +1,7 @@
 {
  "hosting": {
   "site": "umichaiaa",
-  "public": "public",
+  "public": "dist",
   "headers": [
    {
     "source": "**/*.html",

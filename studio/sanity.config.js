@@ -1,7 +1,7 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { schemaTypes } from "./schemaTypes";
-import config from "../sanity.config.json" with { type: "json" };
+import config from "../sanity.config.json";
 
 // Each of these is a single page: one document, no "create new" button.
 const singletons = [

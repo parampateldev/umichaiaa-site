@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/assets/brand.css?v={{ build.stamp }}">
 <script type="speculationrules">{"prerender":[{"where":{"href_matches":["/","/events.html","/officers.html","/contact.html"]},"eagerness":"eager"}]}</script>
 {% if navCurrent != "home" %}<link rel="prefetch" href="/">{% endif %}{% if navCurrent != "events" %}<link rel="prefetch" href="/events.html">{% endif %}{% if navCurrent != "about" %}<link rel="prefetch" href="/officers.html">{% endif %}{% if navCurrent != "contact" %}<link rel="prefetch" href="/contact.html">{% endif %}
-{% if heroImageUrl %}<style>#header-wrapper{background-image:url("{{ heroImageUrl }}") !important}</style>{% endif %}
+{% if heroImageUrl %}<style>#header-wrapper{background-image:url("{{ heroImageUrl | safe }}") !important}</style>{% endif %}
 </head>
 <body class="{{ bodyClass }}">
 {% if fbSdk %}{% include "events-body.njk" %}{% endif %}

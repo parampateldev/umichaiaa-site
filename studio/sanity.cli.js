@@ -1,7 +1,7 @@
-import { defineCliConfig } from "sanity/cli";
-import config from "../sanity.config.json" with { type: "json" };
+// Read by the Sanity command-line tool.
+const config = require("../sanity.config.json");
 
-export default defineCliConfig({
-  api: { projectId: config.projectId, dataset: config.dataset },
+module.exports = {
+  api: { projectId: config.projectId || undefined, dataset: config.dataset },
   studioHost: config.studioHost,
-});
+};

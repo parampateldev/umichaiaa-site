@@ -7,7 +7,7 @@ css: /assets-about/officers.css
 bodyClass: homepage subpage page-about
 navCurrent: about
 eleventyComputed:
-  heroImageUrl: "{{ about.heroImage }}"
+  heroImageUrl: "{{ about.heroImage | safe }}"
 ---
 <div id="main-wrapper">
                     <div class="wrapper style2">

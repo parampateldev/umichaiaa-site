@@ -8,7 +8,7 @@ bodyClass: homepage subpage
 navCurrent: events
 fbSdk: true
 eleventyComputed:
-  heroImageUrl: "{{ events.heroImage }}"
+  heroImageUrl: "{{ events.heroImage | safe }}"
 ---
 <div id="main-wrapper">
 					<div class="wrapper style2">

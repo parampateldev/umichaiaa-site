@@ -7,7 +7,7 @@ css: /assets-contact/contact.css
 bodyClass: homepage subpage
 navCurrent: contact
 eleventyComputed:
-  heroImageUrl: "{{ contact.heroImage }}"
+  heroImageUrl: "{{ contact.heroImage | safe }}"
 ---
 <div id="main-wrapper">
 					<div class="wrapper style2">

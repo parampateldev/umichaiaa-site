@@ -8,7 +8,7 @@ bodyClass: homepage
 navCurrent: home
 hero: true
 eleventyComputed:
-  heroImageUrl: "{{ home.heroImage }}"
+  heroImageUrl: "{{ home.heroImage | safe }}"
 ---
 <div id="main-wrapper">
 					<div class="wrapper style2">

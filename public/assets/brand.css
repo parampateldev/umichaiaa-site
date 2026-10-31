@@ -37,3 +37,20 @@ body:not(.subpage) .wrapper.style3 > .inner { border-top: 1px solid rgba(0,0,0,0
 #footer-wrapper .sf-links a:hover { text-decoration: underline; }
 #footer-wrapper .sf-legal { font-size: .72em; line-height: 1.5; max-width: 52em; margin: 1.2em auto 0; color: rgba(255,255,255,.6); }
 @media (max-width: 736px) { #footer-wrapper .sf-links a { display: inline-block; margin: .25em .6em; } }
+
+/* Compact, centered footer */
+#footer-wrapper { padding: 1.4em 0 1.2em !important; }
+#footer-wrapper #footer, #footer-wrapper #footer .row { margin: 0 !important; }
+#footer-wrapper #footer .col-12 { padding: 0 !important; width: 100%; }
+#footer-wrapper .site-footer-inner { padding: 0 1em !important; text-align: center; }
+#footer-wrapper .site-footer-inner p { margin: 0 0 .5em !important; text-align: center; }
+#footer-wrapper .sf-legal { max-width: 62em; margin: .6em auto 0 !important; font-size: .7em; }
+
+/* Footer alignment fix: one centered column */
+#footer-wrapper #footer .row { display: block !important; }
+#footer-wrapper #footer .row > .col-12 { float: none !important; margin: 0 auto !important; padding: 0 !important; width: 100% !important; max-width: 100% !important; }
+#footer-wrapper #footer .site-footer-inner { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; margin: 0 auto; }
+#footer-wrapper #footer .site-footer-inner p { margin: 0 0 .5em 0 !important; padding: 0 !important; width: auto; text-align: center; }
+#footer-wrapper #footer .site-footer-inner p.sf-legal { max-width: 56em; margin: .5em 0 0 0 !important; }
+#footer-wrapper #footer { width: 100% !important; max-width: 1200px; margin: 0 auto !important; float: none !important; }
+#footer-wrapper #footer .row { margin: 0 !important; width: 100% !important; }

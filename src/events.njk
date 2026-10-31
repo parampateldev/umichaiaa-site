@@ -1,0 +1,54 @@
+---
+layout: layout.njk
+permalink: /events.html
+title: "Michigan AIAA: Events"
+pageKey: events
+css: /assets-events/events.css
+bodyClass: homepage subpage
+navCurrent: events
+fbSdk: true
+eleventyComputed:
+  heroImageUrl: "{{ events.heroImage }}"
+---
+<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<div class="container">
+								<div class="row">
+									<div class="col-4 col-12-medium">
+										<div id="sidebar">
+
+											<!-- Sidebar -->
+
+												<section>
+													<header class="major">
+														<h2>{{ events.socialHeading }}</h2>
+													</header>
+													<div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/AIAAatUMICH/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=367&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FAIAAatUMICH%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline"><span style="vertical-align: bottom; width: 340px; height: 131px;"><iframe name="f15d57cae7cc6b47c" width="1000px" height="1000px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="/assets-events/page.html" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: visible; width: 340px; height: 131px;" class=""></iframe></span></div>
+												</section>
+
+										</div>
+									</div>
+									<div class="col-8 col-12-medium imp-medium">
+										<div id="content">
+
+											<!-- Content -->
+
+												<article>
+													<header class="major">
+														<h2>{{ events.calendarHeading }}</h2>
+													</header>
+													<iframe src="https://calendar.google.com/calendar/embed?src={{ events.calendarEmail | urlencode }}&ctz=America%2FNew_York&mode=MONTH&showTitle=0&showPrint=0&showTz=0" style="border:0;width:100%;max-width:900px;height:650px" frameborder="0" scrolling="no" title="AIAA Google Calendar"></iframe>
+												</article>
+
+										</div>	
+									</div>
+								</div>
+								<p>
+								<iframe src="{{ events.sheetUrl }}" width="100%" height="565px" frameborder="0"></iframe>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			

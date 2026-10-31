@@ -1,0 +1,124 @@
+{
+ "home": {
+  "aboutHeading": "So what are we about?",
+  "aboutIntroHtml": "<p>The <strong>American Institute of Aeronautics and Astronautics</strong> (AIAA) is the professional society for aerospace engineering.</p>\n<p>The University of Michigan Student Branch seeks \"to educate and excite students at U-M about aerospace technologies and science, and to promote fellowship among students interested in these topics.\" <br> Our objective is \"to advance the arts, sciences, and technology of aeronautics and astronautics. AIAA fosters the professional development of those engaged in scientific and engineering activities.\"</p>",
+  "memberHeading": "What can you do as a member?",
+  "memberIntro": "Being a member of Michigan's AIAA chapter opens up countless avenues in your social, academic, and professional paths.",
+  "memberCards": [
+   {
+    "image": "/assets/0iGl7bp.jpg",
+    "imageAlt": "Students networking at a conference",
+    "title": "Network with industry-proven alumni",
+    "subtitle": "Professional Development",
+    "body": "Our Professional Development Committee organizes informational visits from companies eager to hire Michigan engineers, informal lunches with your favorite aerospace professors, and lectures from distinguished faculty and researchers."
+   },
+   {
+    "image": "/assets/MAcMJD4.jpg",
+    "imageAlt": "Members with middle schoolers at Aerospace Day",
+    "title": "Inspire the next generation of rocket scientists",
+    "subtitle": "Outreach",
+    "body": "Want to give back to the community? Join us at Aerospace Day - our semiannual event celebrating our program's history - to show hundreds of elementary and middle schoolers what aerospace is all about. We also plan visits to local high schools, complete with rocket demonstrations."
+   },
+   {
+    "image": "/assets/nWyJzEj.jpg",
+    "imageAlt": "Members gathered in front of a mural",
+    "title": "Become part of a close-knit community",
+    "subtitle": "Social",
+    "body": "Get to know your fellow aerospace engineers, and watch them become a second family. We plan everything from movie and game nights to not-so-friendly ultimate frisbee challenges against rival clubs."
+   },
+   {
+    "image": "/assets/S0tVyGm.jpg",
+    "imageAlt": "Members posing inside an airplane cabin",
+    "title": "Visit and explore amazing landmarks",
+    "subtitle": "Events",
+    "body": "Through our Events Committee, AIAA members have flown planes, met former astronauts, toured Boeing and Delta hangars, and traveled around the country visiting famous aerospace landmarks."
+   }
+  ],
+  "joinHeading": "Interested in Joining?",
+  "joinSubheading": "It's Easy and Totally Worth It",
+  "joinTextHtml": "Email us at <b>umichaiaa@gmail.com</b> with your name and academic standing, and tell us a little bit about yourself! We'll do our best to get you in the chapter as soon as we can.",
+  "followHeading": "Follow Us!",
+  "followText": "Our community isn't just huddled in the Boeing Auditorium! Follow us on Facebook, Twitter, and Instagram for upcoming events, updates on our members' accomplishments, and much, much more!",
+  "heroTagline": "Become part of Michigan's aerospace community",
+  "joinLabel": "Join AIAA",
+  "heroImage": "https://i.imgur.com/RAfoehn.jpg"
+ },
+ "about": {
+  "introHtml": "<h4>Our chapter consists of <strong>four main committees</strong>, through which our members carry out the ideals of the national organization.</h4>\n<h4>While we are primarily composed of Aerospace Engineering majors, we welcome any student that has a passion for the exploration of the aerospace and aeronautic world. <br><br>With over 100 members and counting, we continue to prove that the University of Michigan AIAA Chapter is indeed filled with the \"Leaders and Best.\"</h4>",
+  "officersHeading": "Meet Our Officers",
+  "officers": [
+   {
+    "photo": "/assets-about/RCt3IRt.jpg",
+    "name": "Michael Fischer",
+    "role": "President",
+    "bio": "Michael is a senior from Madison, WI studying aerospace engineering and minoring in business. His career interests center around human spaceflight, and outside of AIAA he is involved with M-SAAVE, Sigma Gamma Tau, peer mentoring, greek life, and the MHL student hockey league. He enjoys playing sports, cheering on the Wolverines, traveling, hiking, and skiing in his free time."
+   },
+   {
+    "photo": "/assets-about/NdEfWch.jpg",
+    "name": "Ayush Pujara",
+    "role": "Vice President of Events",
+    "bio": "Ayush is a sophomore studying aersospace engineering and he loves to learn about how we send vehicles into space and want to pursue a career contributing He is passionate about furthering the extent to which UMich's AIAA inspires students to lead impactful careers in aerospace and provides the resources they need to do so. In his free time, he enjoys playing basketball, dancing, and taking walks through Ann Arbor!"
+   },
+   {
+    "photo": "/assets-about/3kVbfye.jpg",
+    "name": "Wiktoria Gasienica",
+    "role": "Vice President of Membership",
+    "bio": "Wiktoria is a sophomore studying aerospace engineering. Originally from Nowy Targ, Poland, she now calls Chicago home. Her current academic interests lie in fluid mechanics and engine bays, showcasing her fascination with aerospace systems. Beyond her involvement with AIAA, she enjoys playing video games and rescuing animals."
+   },
+   {
+    "photo": "/assets-about/h4A03Gm.jpg",
+    "name": "Samuel Lumbala",
+    "role": "Vice President of Finance",
+    "bio": "Samuel is a Junior from Dallas, Texas, majoring in Aerospace engineering and double minoring in International Programs in Engineering and Computer Science. Besides AIAA, Samuel is also a member of M-Fly. He has an interest in systems engineering, especially pertaining to space crafts. He enjoys traveling, guitar playing and video games."
+   },
+   {
+    "photo": "/assets-about/3DmwJ7z.jpg",
+    "name": "Matt Nurick",
+    "role": "Social Events Chair",
+    "bio": "Originally from Sydney, Australia, Matt is a sophomore who lives in Boston, MA. He is majoring in aerospace engineering and is passionate about space exploration, space technology and cosmology. Outside of the AIAA, Matt is an active member of MASA’s avionics hardware team. In his free time, Matt enjoys jamming with friends on guitar, playing basketball and watching Jeopardy!"
+   },
+   {
+    "photo": "/assets-about/S8jFcir.jpg",
+    "name": "Trevor Jarvis",
+    "role": "Professional Development Chair",
+    "bio": "Trevor is a junior from Brooklyn, Michigan studying aerospace engineering. This is his third year as a part of the AIAA professional development committee, and his first year is its chair. His current career interests center around spacecraft propulsion and deep-space exploration. Outside of AIAA he is involved with MASA and Sigma Gamma Tau. His free time consists of writing, reading, and playing video games."
+   },
+   {
+    "photo": "/assets-about/QejVpPW.jpg",
+    "name": "Sukhpreet Singh",
+    "role": "Outreach Chair",
+    "bio": "Sukhpreet is a junior from Grand Rapids, Michigan studying Aerospace Engineering and minoring in Music. This will be his third year as part of AIAA and second year as the outreach committee chair. He is looking forward to the exciting opportunities that outreach provides for students to becomes passionate about STEM and the aerospace field. Outside of AIAA, Sukhpreet enjoys playing the trombone with the Michigan Marching and Basketball bands and spending time with friends."
+   }
+  ],
+  "spotlightHeading": "Member Spotlight",
+  "spotlightName": "This could be you!",
+  "spotlightDate": "August/September 2023",
+  "spotlightText": [
+   "Want to become a member of the month?",
+   "Stay on the lookout for emails from us for applications!"
+  ],
+  "spotlightImage": "https://public.websites.umich.edu/aiaa/images/pic07.jpg",
+  "heroImage": "https://i.imgur.com/AwQIBE5.jpg"
+ },
+ "contact": {
+  "heading": "Interested in joining? Have a suggestion?",
+  "bodyHtml": "<p>Joining is fast and simple! Contact us and we'll be more than happy to send you the proper instructions. Feel free to reach us through our email: <strong>umichaiaa@gmail.com</strong>. All officers read and respond via this address very quickly.<br><br>\n\t\t\t\t\t\t\t\t\t\t\t\t\tYou can also visit us at our office! We are located on the North Campus of the University of Michigan, at: <br><br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Department of Aerospace Engineering<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;University of Michigan<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1320 Beal Avenue<br>\n\t\t\t\t\t\t\t\t\t\t\t\t\t   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ann Arbor, MI 48109-2140<br><br>\n\t\t\t\t\t\t\t\t\t\t\t\t\tOur office is <strong>1133B</strong>, which is located in the Aero Student Lounge on the first floor of the FXB (Francois Xavier Bagnoud building), just off of the main atrium.</p>",
+  "heroImage": "https://i.imgur.com/KTJJBml.jpg"
+ },
+ "events": {
+  "socialHeading": "Social Media Feeds",
+  "calendarHeading": "Calendar",
+  "heroImage": "https://i.imgur.com/KTJJBml.jpg",
+  "calendarEmail": "umichaiaa@gmail.com",
+  "sheetUrl": "https://docs.google.com/spreadsheets/d/e/2PACX-1vSxK9SqgNTyhOFp8LXUlCrXtjcT7midjZn5HGGh139DA35XLECYLIlqCgGoPAgg2GiH00C4CUGurP-g/pubhtml?widget=true&headers=false"
+ },
+ "site": {
+  "email": "umichaiaa@gmail.com",
+  "facebookUrl": "https://www.facebook.com/AIAAatUMICH/?fref=nf",
+  "xUrl": "https://x.com/umichaiaa",
+  "instagramUrl": "https://www.instagram.com/aiaaumich/",
+  "footerLegal": "AIAA and the AIAA logo are trademarks of the American Institute of Aeronautics and Astronautics. “University of Michigan” is a trademark of the Regents of the University of Michigan. This site is run by the student branch.",
+  "footerName": "University of Michigan AIAA Student Branch",
+  "joinLink": "/contact.html"
+ }
+}

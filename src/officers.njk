@@ -1,0 +1,74 @@
+---
+layout: layout.njk
+permalink: /officers.html
+title: "Michigan AIAA: About Us"
+pageKey: about
+css: /assets-about/officers.css
+bodyClass: homepage subpage page-about
+navCurrent: about
+eleventyComputed:
+  heroImageUrl: "{{ about.heroImage }}"
+---
+<div id="main-wrapper">
+                    <div class="wrapper style2">
+                        <div class="inner">
+                            <div class="container">
+                                <div id="content">
+
+                                    <!-- Content -->
+
+                                        <article>
+{{ about.introHtml | safe }}
+</article>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper style3">
+                        <div class="inner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-8 col-12-medium">
+
+                                        <!-- Article list -->
+                                            <section class="box article-list">
+                                                <h2 class="icon fa-file-text-o">{{ about.officersHeading }}</h2>
+
+                                                {% for o in about.officers %}
+													<article class="box excerpt">
+														<a href="#" class="image left"><img src="{{ o.photo }}" alt="{{ o.name }}"></a>
+														<div>
+															<header>
+																<span class="date">{{ o.name }}</span>
+																<h3><a href="#">{{ o.role }}</a></h3>
+															</header>
+															<p>{{ o.bio }}</p>
+														</div>
+													</article>
+													{% endfor %}
+											</section>
+									</div>
+									<div class="col-4 col-12-medium">
+
+                                        <!-- MEMBER SPOTLIGHT -->
+                                            <section class="box spotlight">
+                                                <h2 class="icon fa-file-text-o">{{ about.spotlightHeading }}</h2>
+												<article>
+													<a href="#" class="image featured"><img src="{{ about.spotlightImage }}" alt=""></a>
+													<header>
+														<h3><a href="#">{{ about.spotlightName }}</a></h3>
+														<p>{{ about.spotlightDate }}</p>
+													</header>
+													{% for line in about.spotlightText %}<p>{{ line }}</p>{% endfor %}
+												</article>
+											</section>
+                                        <!-- END EDITABLE SECTION -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            

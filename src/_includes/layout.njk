@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<title>{{ title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" href="{{ css }}">
+{% if fbSdk %}{% include "events-head.njk" %}{% endif %}
+<link rel="icon" href="/favicon.ico?v=3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=3"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="stylesheet" href="/assets/brand.css?v={{ build.stamp }}">
+<script type="speculationrules">{"prerender":[{"where":{"href_matches":["/","/events.html","/officers.html","/contact.html"]},"eagerness":"eager"}]}</script>
+{% if navCurrent != "home" %}<link rel="prefetch" href="/">{% endif %}{% if navCurrent != "events" %}<link rel="prefetch" href="/events.html">{% endif %}{% if navCurrent != "about" %}<link rel="prefetch" href="/officers.html">{% endif %}{% if navCurrent != "contact" %}<link rel="prefetch" href="/contact.html">{% endif %}
+{% if heroImageUrl %}<style>#header-wrapper{background-image:url("{{ heroImageUrl }}") !important}</style>{% endif %}
+</head>
+<body class="{{ bodyClass }}">
+{% if fbSdk %}{% include "events-body.njk" %}{% endif %}
+<div id="page-wrapper">
+
+<!-- Header -->
+<div id="header-wrapper">
+<div class="container">
+<header id="header">
+<div class="inner">
+<h1><a href="/" id="logo"><img src="/assets/logo-reverse.png" alt="AIAA Student Branch @ University of Michigan"></a></h1>
+<nav id="nav">
+<ul>
+<li{% if navCurrent == "home" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/">Home</a></li>
+<li{% if navCurrent == "events" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/events.html">Events</a></li>
+<li{% if navCurrent == "about" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/officers.html">About Us</a></li>
+<li{% if navCurrent == "contact" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/contact.html">Contact Us</a></li>
+</ul>
+</nav>
+</div>
+</header>
+{% if hero %}
+<div class="hero-cta">
+<p class="hero-cta-text">{{ home.heroTagline }}</p>
+<a class="join-btn join-hero" href="{{ site.joinLink }}">{{ home.joinLabel }} <span aria-hidden="true">&rarr;</span></a>
+</div>
+<div id="banner">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+{% endif %}
+</div>
+</div>
+
+<!-- Main Wrapper -->
+{{ content | safe }}
+
+<!-- Footer Wrapper -->
+<div id="footer-wrapper">
+<footer id="footer" class="container">
+<div class="row">
+<div class="col-12">
+<div class="site-footer-inner">
+<p class="sf-main">&copy; <span class="sf-year">{{ build.year }}</span> {{ site.footerName }}. All rights reserved.</p>
+<p class="sf-links"><a href="/">Home</a><a href="/events.html">Events</a><a href="/officers.html">About Us</a><a href="/contact.html">Contact Us</a><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+<p class="sf-legal">{{ site.footerLegal }}</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</div>
+
+<!-- Scripts -->
+<script src="/assets/jquery.min.js"></script>
+<script src="/assets/jquery.dropotron.min.js"></script>
+<script src="/assets/browser.min.js"></script>
+<script src="/assets/breakpoints.min.js"></script>
+<script src="/assets/util.js"></script>
+<script src="/assets/main-site.js"></script>
+<script>document.querySelectorAll(".sf-year").forEach(function(e){e.textContent=new Date().getFullYear()})</script>
+</body></html>

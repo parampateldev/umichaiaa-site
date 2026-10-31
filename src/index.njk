@@ -1,0 +1,99 @@
+---
+layout: layout.njk
+permalink: /index.html
+title: Michigan AIAA
+pageKey: home
+css: /assets/main.css
+bodyClass: homepage
+navCurrent: home
+hero: true
+eleventyComputed:
+  heroImageUrl: "{{ home.heroImage }}"
+---
+<div id="main-wrapper">
+					<div class="wrapper style2">
+						<div class="inner">
+							<!-- Feature 1 -->
+								<section class="container box feature1">
+									<div class="row">
+										<div class="col-12">
+											<header class="first major">
+												<h2>{{ home.aboutHeading }}</h2>
+												{{ home.aboutIntroHtml | safe }}
+											</header>
+										</div>
+										
+									</div>
+								</section>
+
+						</div>
+					</div>
+					<div class="wrapper style2">
+						<div class="inner">
+							<!-- Feature 2 -->
+								<section class="container box feature2 member-section">
+								<header class="member-head">
+									<h2>{{ home.memberHeading }}</h2>
+									<p>{{ home.memberIntro }}</p>
+								</header>
+								<div class="member-grid">
+									{% for card in home.memberCards %}
+									<article class="member-card">
+										<div class="member-media"><img src="{{ card.image }}" alt="{{ card.imageAlt }}" loading="lazy"></div>
+										<div class="member-body">
+											<h3>{{ card.title }}</h3>
+											<p class="member-sub">{{ card.subtitle }}</p>
+											<p>{{ card.body }}</p>
+										</div>
+									</article>
+									{% endfor %}
+								</div>
+							</section>
+
+							</div>
+					</div>
+					<div class="wrapper style3">
+						<div class="inner">
+							<div class="container">
+								<div class="row">
+									<div class="col-8 col-12-medium">
+
+										<!-- Article list -->
+											<section class="box article-list">
+												<h2 class="icon fa-file-text-o">{{ home.joinHeading }}</h2>
+
+												<!-- Excerpt -->
+													<article class="box excerpt">
+														<div>
+															<header>
+																<h3><a href="#">{{ home.joinSubheading }}</a></h3>
+															</header>
+<p>{{ home.joinTextHtml | safe }}</p>
+														</div>
+													</article>
+
+											</section>
+									</div>
+									<div class="col-4 col-12-medium">
+
+										<!-- Spotlight -->
+											<section class="box spotlight">
+												<h2 class="icon fa-file-text-o">{{ home.followHeading }}</h2>
+												<article>
+<p>{{ home.followText }}</p>
+													<div style="display:flex;align-items:center;gap:20px;margin-top:1em">
+														<a href="{{ site.facebookUrl }}" style="display:block;line-height:0"><img width="45" height="45" src="/assets/facebook.svg" alt="Facebook"></a>
+														<a href="{{ site.xUrl }}" style="display:block;line-height:0"><img width="45" height="45" src="/assets/x.svg" alt="X (Twitter)"></a>
+														<a href="{{ site.instagramUrl }}" style="display:block;line-height:0"><img width="45" height="45" src="/assets/instagram.svg" alt="Instagram"></a>
+													</div>
+												</article>
+											</section>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			

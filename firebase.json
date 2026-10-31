@@ -1,1 +1,1 @@
-{"hosting":{"site":"umichaiaa","public":"public"}}
+{"hosting":{"site":"umichaiaa","public":"public","headers":[{"source":"**/*.html","headers":[{"key":"Cache-Control","value":"no-cache"}]},{"source":"/","headers":[{"key":"Cache-Control","value":"no-cache"}]}]}}

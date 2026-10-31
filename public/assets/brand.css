@@ -110,3 +110,6 @@ body:not(.subpage) #header-wrapper { position: relative; }
 .member-grid { grid-auto-rows: 1fr; }
 .member-card { height: 100%; }
 .member-body p { margin-bottom: 0 !important; }
+.member-head { text-align: center !important; }
+.member-head h2, .member-head p { text-align: center !important; margin-left: auto !important; margin-right: auto !important; }
+.member-head p { max-width: 40em; }

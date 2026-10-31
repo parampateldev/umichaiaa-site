@@ -115,3 +115,9 @@ body:not(.subpage) #header-wrapper { position: relative; }
 .member-head p { max-width: 40em; }
 .member-head p { max-width: 64em !important; }
 @media (min-width: 900px) { .member-head p { white-space: nowrap; font-size: .95em !important; } }
+
+/* Membership cards: square corners, plain header + subheader */
+.member-card { border-radius: 0 !important; }
+.member-media, .member-media img { border-radius: 0 !important; }
+.member-body h3 { margin: 0 0 .25em !important; }
+.member-body p.member-sub { margin: 0 0 .9em !important; font-size: .85em !important; font-weight: 700 !important; letter-spacing: .08em; text-transform: uppercase; color: #7a6a1f !important; }

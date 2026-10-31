@@ -2,3 +2,13 @@
 #header h1 a#logo { display: block; }
 #header h1 a#logo img { height: 44px; width: auto; display: block; }
 @media (max-width: 736px) { #header h1 a#logo img { height: 34px; } #header h1 { margin-top: -17px !important; } }
+
+/* Smooth page-to-page transitions (cross-document view transitions) */
+@view-transition { navigation: auto; }
+#header { view-transition-name: site-header; }
+::view-transition-group(site-header) { animation-duration: 0s; }
+::view-transition-old(root) { animation: 180ms ease-out both vt-fade-out; }
+::view-transition-new(root) { animation: 260ms ease-in both vt-fade-in; }
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }

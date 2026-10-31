@@ -1,1 +1,26 @@
-{"hosting":{"site":"umichaiaa","public":"public","headers":[{"source":"**/*.html","headers":[{"key":"Cache-Control","value":"no-cache"}]},{"source":"/","headers":[{"key":"Cache-Control","value":"no-cache"}]}]}}
+{
+ "hosting": {
+  "site": "umichaiaa",
+  "public": "public",
+  "headers": [
+   {
+    "source": "**/*.html",
+    "headers": [
+     {
+      "key": "Cache-Control",
+      "value": "public, max-age=0, must-revalidate"
+     }
+    ]
+   },
+   {
+    "source": "**/*.@(css|js|png|svg|ico|jpg)",
+    "headers": [
+     {
+      "key": "Cache-Control",
+      "value": "public, max-age=86400"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -114,3 +114,4 @@ body:not(.subpage) #header-wrapper { position: relative; }
 .member-head h2, .member-head p { text-align: center !important; margin-left: auto !important; margin-right: auto !important; }
 .member-head p { max-width: 40em; }
 .member-head p { max-width: 64em !important; }
+@media (min-width: 900px) { .member-head p { white-space: nowrap; font-size: .95em !important; } }

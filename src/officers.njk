@@ -35,20 +35,20 @@ eleventyComputed:
                                             <section class="box article-list">
                                                 <h2 class="icon fa-file-text-o">{{ about.officersHeading }}</h2>
 
-                                                <div class="officer-grid">
-{% for o in about.officers %}
-<article class="box excerpt officer-card">
-<div class="officer-photo"><img src="{{ o.photo }}" alt="{{ o.name }}"></div>
-<div class="officer-name">{{ o.name }}</div>
-<div class="officer-role">{{ o.role }}</div>
-<div class="officer-facts">
-{% if o.year or o.major %}<div class="fact">{% if o.year %}<span class="yr">{{ o.year }}</span>{% endif %}{% if o.year and o.major %} in {% endif %}{% if o.major %}<span class="mj">{{ o.major }}</span>{% endif %}</div>{% endif %}
-{% if o.minor %}<div class="fact">Minor{% if " & " in o.minor %}s{% endif %} in <span class="mj">{{ o.minor }}</span></div>{% endif %}
+                                                {% for o in about.officers %}
+<article class="box excerpt officer-row">
+<a class="image left"><img src="{{ o.photo }}" alt="{{ o.name }}"></a>
+<div>
+<header>
+<span class="date">{{ o.name }}</span>
+<h3><a>{{ o.role }}</a></h3>
+</header>
+{% if o.year or o.major %}<p class="officer-line">{% if o.year %}<span class="yr">{{ o.year }}</span>{% endif %}{% if o.year and o.major %} in {% endif %}{% if o.major %}<span class="mj">{{ o.major }}</span>{% endif %}</p>{% endif %}
+{% if o.minor %}<p class="officer-line">Minor{% if " & " in o.minor %}s{% endif %} in <span class="mj">{{ o.minor }}</span></p>{% endif %}
+{% if o.bio %}<p>{{ o.bio }}</p>{% endif %}
 </div>
-{% if o.bio %}<p class="officer-bio">{{ o.bio }}</p>{% endif %}
 </article>
 {% endfor %}
-</div>
 											</section>
 									</div>
 									<div class="col-4 col-12-medium">

@@ -1,0 +1,43 @@
+{
+  "heading": "Our Subteams",
+  "intro": "Our chapter consists of four main committees, through which our members carry out the ideals of the national organization.",
+  "teams": [
+    {
+      "id": "pdc",
+      "name": "Professional Development Committee",
+      "short": "Professional Development (PDC)",
+      "body": "AIAA hosts an array of events from company info sessions, resume reviews, and networking events with companies and their representatives. Members of the Professional Development Committee are responsible for reaching out to and planning these events, establishing relationships between reps and our branch.",
+      "banner": "/assets/photos/b_pdc.jpg",
+      "photo": "/assets/photos/t_awards.jpg",
+      "photoAlt": "Industry guests and students at an AIAA event"
+    },
+    {
+      "id": "outreach",
+      "name": "Outreach Committee",
+      "short": "Outreach",
+      "body": "The Outreach Committee is responsible for coordinating and hosting all events that work with the local community and bettering our relationship with members of our UM community. Some of the responsibilities of Outreach members are participating in external mentoring for local school programs, internal UM mentoring events, attending local STEM nights, and helping prepare and run Aerospace Day.",
+      "banner": "/assets/photos/b_outreach.jpg",
+      "photo": "/assets/photos/t_pair.jpg",
+      "photoAlt": "Two members at Aerospace Day"
+    },
+    {
+      "id": "policy",
+      "name": "Public Policy Committee",
+      "short": "Public Policy",
+      "body": "The Public Policy Committee advocates for aerospace policy on behalf of our branch and gives members a direct line to the people shaping it. Members meet with public policy experts ranging from legislative staff to nonprofit advocates, learn how aerospace funding and regulation actually get decided, and make contact with their own representatives to have their voices heard on the issues facing the industry.",
+      "banner": "/assets/photos/b_policy.jpg",
+      "photo": "/assets/photos/t_talk.jpg",
+      "photoAlt": "A speaker presenting at an AIAA event"
+    },
+    {
+      "id": "social",
+      "name": "Social Committee",
+      "short": "Social",
+      "body": "The Social Committee plans and runs the events that bring our members together outside of a professional setting, including game nights, movie nights, intramural sports, and branch-wide socials. Members gain hands-on experience brainstorming, planning and executing events, which makes it a great committee for anyone who wants real leadership experience.",
+      "banner": "/assets/photos/b_social.jpg",
+      "photo": "/assets/photos/t_ice.jpg",
+      "photoAlt": "Members skating together"
+    }
+  ],
+  "banner": "/assets/photos/b_subteams.jpg"
+}

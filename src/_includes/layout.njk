@@ -6,7 +6,7 @@
 {% if fbSdk %}{% include "events-head.njk" %}{% endif %}
 <link rel="icon" href="/favicon.ico?v=3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=3"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
 <link rel="stylesheet" href="/assets/brand.css?v={{ build.stamp }}">
-<script type="speculationrules">{"prerender":[{"where":{"href_matches":["/","/events.html","/officers.html","/contact.html"]},"eagerness":"eager"}]}</script>
+<script type="speculationrules">{"prerender":[{"where":{"href_matches":["/","/subteams.html","/history.html","/events.html","/officers.html","/contact.html"]},"eagerness":"eager"}]}</script>
 {% if navCurrent != "home" %}<link rel="prefetch" href="/">{% endif %}{% if navCurrent != "events" %}<link rel="prefetch" href="/events.html">{% endif %}{% if navCurrent != "about" %}<link rel="prefetch" href="/officers.html">{% endif %}{% if navCurrent != "contact" %}<link rel="prefetch" href="/contact.html">{% endif %}
 {% if heroImageUrl %}<style>#header-wrapper{background-image:url("{{ heroImageUrl | safe }}") !important}</style>{% endif %}
 </head>
@@ -17,19 +17,29 @@
 <!-- Header -->
 <div id="header-wrapper">
 <div class="container">
-<header id="header">
-<div class="inner">
-<h1><a href="/" id="logo"><img src="/assets/logo-reverse.png" alt="AIAA Student Branch @ University of Michigan"></a></h1>
-<nav id="nav">
-<ul>
-<li{% if navCurrent == "home" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/">Home</a></li>
-<li{% if navCurrent == "events" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/events.html">Events</a></li>
-<li{% if navCurrent == "about" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/officers.html">About Us</a></li>
-<li{% if navCurrent == "contact" %} class="current_page_item"{% endif %} style="white-space: nowrap;"><a href="/contact.html">Contact Us</a></li>
-</ul>
+<header id="site-header" class="is-top">
+<div class="sh-bar">
+<a class="sh-logo" href="/" id="logo"><img class="logo-w" src="/assets/logo-reverse.png" alt="AIAA Student Branch @ University of Michigan"><img class="logo-d" src="/assets/logo-darkblue.png" alt="" aria-hidden="true"></a>
+<nav class="sh-links" aria-label="Main">
+<a class="sh-link{% if navCurrent == "home" %} is-current{% endif %}" href="/">Home</a>
+<div class="sh-item"><a class="sh-link{% if navCurrent == "subteams" %} is-current{% endif %}" href="/subteams.html">Subteams <svg class="chev" viewBox="0 0 12 8" width="11" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="sh-menu"><div class="sh-menu-in"><a href="/subteams/pdc.html">Professional Development (PDC)</a><a href="/subteams/outreach.html">Outreach</a><a href="/subteams/policy.html">Public Policy</a><a href="/subteams/social.html">Social</a></div></div></div>
+<a class="sh-link{% if navCurrent == "events" %} is-current{% endif %}" href="/events.html">Events</a>
+<div class="sh-item"><a class="sh-link{% if navCurrent == "about" %} is-current{% endif %}" href="/officers.html">About Us <svg class="chev" viewBox="0 0 12 8" width="11" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a><div class="sh-menu"><div class="sh-menu-in"><a href="/officers.html">Meet Our Officers</a><a href="/history.html">History</a></div></div></div>
+<a class="sh-link sh-pill{% if navCurrent == "contact" %} is-current{% endif %}" href="/contact.html">Contact Us</a>
 </nav>
+<button class="sh-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sh-mobile"><span></span></button>
 </div>
 </header>
+<div class="sh-mobile" id="sh-mobile">
+<div class="sh-mobile-in">
+<a href="/">Home</a>
+<div class="sh-acc"><button type="button" class="sh-acc-btn" aria-expanded="false">Subteams <i></i></button><div class="sh-acc-panel"><a href="/subteams.html">All subteams</a><a href="/subteams/pdc.html">Professional Development (PDC)</a><a href="/subteams/outreach.html">Outreach</a><a href="/subteams/policy.html">Public Policy</a><a href="/subteams/social.html">Social</a></div></div>
+<a href="/events.html">Events</a>
+<div class="sh-acc"><button type="button" class="sh-acc-btn" aria-expanded="false">About Us <i></i></button><div class="sh-acc-panel"><a href="/officers.html">Meet Our Officers</a><a href="/history.html">History</a></div></div>
+<a href="/contact.html" class="sh-mobile-pill">Contact Us</a>
+</div>
+</div>
+
 {% if hero %}
 <div class="hero-cta">
 <p class="hero-cta-text">{{ home.heroTagline }}</p>
@@ -44,6 +54,7 @@
 
 <!-- Main Wrapper -->
 {{ content | safe }}
+{% include "gallery.njk" %}
 
 <!-- Footer Wrapper -->
 <div id="footer-wrapper">
@@ -52,7 +63,7 @@
 <div class="col-12">
 <div class="site-footer-inner">
 <p class="sf-main">&copy; <span class="sf-year">{{ build.year }}</span> {{ site.footerName }}. All rights reserved.</p>
-<p class="sf-links"><a href="/">Home</a><a href="/events.html">Events</a><a href="/officers.html">About Us</a><a href="/contact.html">Contact Us</a><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+<p class="sf-links"><a href="/">Home</a><a href="/subteams.html">Subteams</a><a href="/events.html">Events</a><a href="/officers.html">About Us</a><a href="/history.html">History</a><a href="/contact.html">Contact Us</a><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
 <p class="sf-legal">{{ site.footerLegal }}</p>
 </div>
 </div>
@@ -63,11 +74,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="/assets/jquery.min.js"></script>
-<script src="/assets/jquery.dropotron.min.js"></script>
-<script src="/assets/browser.min.js"></script>
-<script src="/assets/breakpoints.min.js"></script>
-<script src="/assets/util.js"></script>
-<script src="/assets/main-site.js"></script>
+<script src="/assets/nav.js"></script>
 <script>document.querySelectorAll(".sf-year").forEach(function(e){e.textContent=new Date().getFullYear()})</script>
 </body></html>

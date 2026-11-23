@@ -1,0 +1,33 @@
+---
+layout: layout.njk
+permalink: /subteams.html
+title: "Michigan AIAA: Subteams"
+pageKey: subteams
+css: /assets-contact/contact.css
+bodyClass: homepage subpage
+navCurrent: subteams
+eleventyComputed:
+  heroImageUrl: "{{ subteams.banner }}"
+---
+<div id="main-wrapper">
+<div class="wrapper style2">
+<div class="inner">
+<div class="container">
+<div id="content">
+<article>
+<header class="major"><h2>{{ subteams.heading }}</h2></header>
+<p class="team-intro">{{ subteams.intro }}</p>
+<div class="team-grid">
+{% for t in subteams.teams %}
+<a class="team-card" href="/subteams/{{ t.id }}.html">
+<img src="{{ t.photo }}" alt="{{ t.photoAlt }}" loading="lazy">
+<span class="team-card-body"><h3>{{ t.name }}</h3><span class="more">Learn more &rarr;</span></span>
+</a>
+{% endfor %}
+</div>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>

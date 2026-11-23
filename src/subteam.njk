@@ -1,0 +1,32 @@
+---
+layout: layout.njk
+pagination:
+  data: subteams.teams
+  size: 1
+  alias: team
+permalink: "/subteams/{{ team.id }}.html"
+title: "Michigan AIAA: Subteams"
+pageKey: subteams
+css: /assets-contact/contact.css
+bodyClass: homepage subpage
+navCurrent: subteams
+eleventyComputed:
+  heroImageUrl: "{{ team.banner }}"
+  title: "Michigan AIAA: {{ team.name }}"
+---
+<div id="main-wrapper">
+<div class="wrapper style2">
+<div class="inner">
+<div class="container">
+<div id="content">
+<article class="team-page">
+<header class="major"><h2>{{ team.name }}</h2></header>
+<img class="team-photo" src="{{ team.photo }}" alt="{{ team.photoAlt }}">
+<p class="team-lead">{{ team.body }}</p>
+<p class="team-cta"><a class="join-btn" href="{{ site.joinLink }}">Join AIAA <span aria-hidden="true">&rarr;</span></a></p>
+<h3 class="team-others-h">Other subteams</h3>
+<ul class="team-others">
+{% for t in subteams.teams %}{% if t.id != team.id %}<li><a href="/subteams/{{ t.id }}.html">{{ t.name }}</a></li>{% endif %}{% endfor %}
+</ul>
+</article>
+</div></div></div></div></div>

@@ -292,3 +292,11 @@ body.menu-open #site-header { background: transparent !important; box-shadow: no
 .timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; margin-left: -1.5px; background: #00274c; border-radius: 3px; }
 .tl-dot { position: relative; z-index: 1; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 3px solid #00274c; box-sizing: border-box; }
 @media (max-width: 736px) { .timeline { gap: 120px; } }
+
+/* Join button (MASA-style): white pill with a maize/navy gradient ring; on hover it fills maize, lifts and glows */
+.join-btn { position: relative; isolation: isolate; overflow: hidden; border: 0 !important; border-radius: 999px !important; color: #00274c !important; font-weight: 800; background: linear-gradient(117deg, #ffe27a 0%, #ffcb05 52%, #00274c 52%) !important; background-size: 200% 100% !important; background-position: 50% 0 !important; box-shadow: 0 4px 15px 0 rgba(255,203,5,.55); transform: perspective(1px) translateZ(0); transition: .3s ease all; }
+.join-btn::before { content: ""; position: absolute; z-index: -1; inset: 3px; border-radius: 999px; background: #fff; transition: .3s ease all; }
+.join-btn:hover { background-position: 0% 0 !important; transform: scale(1.05); box-shadow: 0 6px 18px 0 rgba(255,203,5,.7); color: #00274c !important; }
+.join-btn:hover::before { transform: scale(0); opacity: 0; }
+.join-btn:active { transform: scale(.96); box-shadow: 0 1px 4px 0 rgba(255,203,5,.7); }
+.join-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }

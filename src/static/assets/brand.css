@@ -155,3 +155,14 @@ body:not(.subpage) .wrapper.style3 .box { margin: 0 auto !important; text-align:
 body:not(.subpage) .wrapper.style3 .spotlight > article > div { display: flex; justify-content: center; align-items: center; gap: 20px; }
 body:not(.subpage) .wrapper.style3 p { max-width: 34em; margin-left: auto !important; margin-right: auto !important; }
 @media (max-width: 736px) { body:not(.subpage) .wrapper.style3 .container > .row { grid-template-columns: 1fr; } }
+
+/* Mobile top bar: the template copies the logo <img> into #titleBar, so size it here */
+#titleBar .title { display: flex; align-items: center; justify-content: center; height: 44px; padding: 0 60px; overflow: hidden; }
+#titleBar .title a { display: flex; align-items: center; }
+#titleBar .title img { height: 28px; width: auto; max-width: 100%; display: block; }
+img { max-width: 100%; }
+
+/* Mobile menu button: draw the three bars in CSS (the template's icon font is not loaded) */
+#titleBar .toggle { opacity: 1 !important; }
+#titleBar .toggle:before { content: "" !important; position: absolute; left: 18px; top: 21px; width: 22px; height: 2px !important; line-height: 0 !important; font-size: 0 !important; background: #ffcb05; border-radius: 1px; box-shadow: 0 -7px 0 #ffcb05, 0 7px 0 #ffcb05; }
+#titleBar .toggle:focus-visible { outline: 2px solid #ffcb05; outline-offset: -4px; }

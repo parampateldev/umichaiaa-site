@@ -43,7 +43,12 @@ eleventyComputed:
 																<span class="date">{{ o.name }}</span>
 																<h3><a href="#">{{ o.role }}</a></h3>
 															</header>
-															<p>{{ o.bio }}</p>
+															{% if o.year or o.major or o.minor %}<div class="officer-facts">
+{% if o.year %}<div class="fact"><b>Grade</b><span>{{ o.year }}</span></div>{% endif %}
+{% if o.major %}<div class="fact"><b>Major</b><span>{{ o.major }}</span></div>{% endif %}
+{% if o.minor %}<div class="fact"><b>Minor{% if " & " in o.minor %}s{% endif %}</b><span>{{ o.minor }}</span></div>{% endif %}
+</div>{% endif %}
+{% if o.bio %}<p>{{ o.bio }}</p>{% endif %}
 														</div>
 													</article>
 													{% endfor %}

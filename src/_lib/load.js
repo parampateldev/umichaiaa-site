@@ -66,7 +66,7 @@ module.exports = async function load() {
         },
         about: about && {
           heroImage: img(about.heroImage, 2400), introHtml: blocks(about.intro, "h4"), officersHeading: about.officersHeading,
-          officers: (about.officers || []).map((o) => ({ photo: img(o.photo, 600), name: o.name, role: o.role, bio: o.bio })),
+          officers: (about.officers || []).map((o) => ({ photo: img(o.photo, 600), name: o.name, role: o.role, year: o.year, major: o.major, minor: o.minor, bio: o.bio })),
           spotlightHeading: about.spotlightHeading, spotlightName: about.spotlightName, spotlightDate: about.spotlightDate,
           spotlightText: lines(about.spotlightText), spotlightImage: img(about.spotlightImage, 800),
         },

@@ -93,7 +93,7 @@ export const eventsPage = defineType({
     photo("heroImage", "Photo strip at the top"),
     defineField({ name: "socialHeading", title: "Social media heading", type: "string" }),
     defineField({ name: "calendarHeading", title: "Calendar heading", type: "string" }),
-    defineField({ name: "calendarEmail", title: "Google Calendar address", type: "string", description: "The Google account that owns the calendar. The calendar must be set to public in Google Calendar." }),
+    defineField({ name: "calendarEmail", title: "Google Calendar ID", type: "string", description: "In Google Calendar: Settings > your calendar > Integrate calendar > Calendar ID. The calendar must be set to public." }),
     defineField({ name: "sheetUrl", title: "Events table link (Google Sheet)", type: "url", description: "In Google Sheets: File > Share > Publish to web > Embed, then paste the link here." }),
   ],
   preview: { prepare: () => ({ title: "Events page" }) },

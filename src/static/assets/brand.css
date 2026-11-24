@@ -335,4 +335,4 @@ body.menu-open #site-header { background: transparent !important; box-shadow: no
 
 /* Satoshi everywhere except the hero tagline (New Title) */
 body, body * { font-family: "Satoshi", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif !important; }
-.hero-cta-text { font-family: "New Title", "Satoshi", sans-serif !important; }
+.hero-cta-text { font-family: "Clash Display", "Satoshi", sans-serif !important; font-weight: 600 !important; letter-spacing: 0 !important; font-size: clamp(1.9em, 4vw, 3.3em) !important; line-height: 1.12 !important; }

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ css }}">
 {% if fbSdk %}{% include "events-head.njk" %}{% endif %}
 <link rel="icon" href="/favicon.ico?v=3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png?v=3"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
-<link rel="preconnect" href="https://api.fontshare.com"><link rel="preconnect" href="https://cdn.fontshare.com" crossorigin><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=new-title@700&display=swap">
+<link rel="preconnect" href="https://api.fontshare.com"><link rel="preconnect" href="https://cdn.fontshare.com" crossorigin><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap">
 <link rel="stylesheet" href="/assets/brand.css?v={{ build.stamp }}">
 <script type="speculationrules">{"prerender":[{"where":{"href_matches":["/","/subteams.html","/history.html","/events.html","/officers.html","/contact.html"]},"eagerness":"eager"}]}</script>
 {% if navCurrent != "home" %}<link rel="prefetch" href="/">{% endif %}{% if navCurrent != "events" %}<link rel="prefetch" href="/events.html">{% endif %}{% if navCurrent != "about" %}<link rel="prefetch" href="/officers.html">{% endif %}{% if navCurrent != "contact" %}<link rel="prefetch" href="/contact.html">{% endif %}

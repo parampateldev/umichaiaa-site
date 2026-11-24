@@ -1,1 +1,11 @@
-{% if gallery %}<div class="photo-strip">{% for g in gallery %}<img src="/assets/photos/{{ g }}.jpg" alt="Michigan AIAA members at club events" loading="lazy">{% endfor %}</div>{% endif %}
+{% set galleryPhotos = ["t_celebrate","t_tables","t_awards","t_group","t_mass","t_nasa","t_panel","t_pair","t_plaque","t_polos","t_ice","t_hall","t_stage","t_moon","t_talk","t_conf","t_guests","t_sign","t_pumpkins","t_tabling","t_boeing","t_stage2","t_tables2","t_panel2","t_talk2"] %}
+<section class="gallery" aria-label="Photo gallery">
+<h2 class="gallery-title">Life at AIAA</h2>
+<div class="gallery-wrap">
+<button class="g-arrow g-prev" type="button" aria-label="Scroll photos left">&#8249;</button>
+<div class="g-track" tabindex="0">
+{% for g in galleryPhotos %}<img src="/assets/photos/{{ g }}.jpg" alt="Michigan AIAA members at club events" loading="lazy" width="900" height="600">{% endfor %}
+</div>
+<button class="g-arrow g-next" type="button" aria-label="Scroll photos right">&#8250;</button>
+</div>
+</section>

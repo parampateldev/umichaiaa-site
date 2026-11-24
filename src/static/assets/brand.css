@@ -343,3 +343,12 @@ body.page-about .wrapper.style3 { padding: 1.6em 0 3em !important; }
 body.page-about .wrapper.style2 article > :last-child { margin-bottom: 0 !important; }
 /* double-line divider under the intro paragraph, above Meet Our Officers / Member Spotlight */
 body.page-about .wrapper.style2 article::after { content: ""; display: block; margin-top: 1.8em; border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; height: 8px; }
+
+/* single line under the two section headings */
+body.page-about .wrapper.style3 h2 { border-bottom: 1px solid #dbdbdb; margin: 0 0 1.4em !important; padding-bottom: .55em; text-align: center; }
+/* Member Spotlight: empty-state card */
+body.page-about .spot-card { text-align: center; }
+.spot-empty { display: flex; align-items: center; justify-content: center; aspect-ratio: 4/3; border: 2px solid #c9d2dc; border-radius: 14px; background: #f7f9fb; color: #6b7a8a; font-weight: 600; padding: 1em; margin: 0 auto 1.3em; }
+.spot-card h3 { margin: 0 0 .25em; color: #00274c; font-weight: 800; font-size: 1.35em; }
+.spot-card .spot-date { color: #8a6a00; font-weight: 700; margin: 0 0 1em !important; }
+.spot-card p { margin: 0 auto .8em !important; max-width: 24em; line-height: 1.55; }

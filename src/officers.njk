@@ -57,14 +57,12 @@ gallery: ["t_stage","t_conf","t_ice"]
                                         <!-- MEMBER SPOTLIGHT -->
                                             <section class="box spotlight">
                                                 <h2 class="icon fa-file-text-o">{{ about.spotlightHeading }}</h2>
-												<article>
-													<a href="#" class="image featured"><img src="{{ about.spotlightImage }}" alt=""></a>
-													<header>
-														<h3><a href="#">{{ about.spotlightName }}</a></h3>
-														<p>{{ about.spotlightDate }}</p>
-													</header>
-													{% for line in about.spotlightText %}<p>{{ line }}</p>{% endfor %}
-												</article>
+												<article class="spot-card">
+<div class="spot-empty" role="img" aria-label="No member of the month at the moment"></div>
+<h3>{{ about.spotlightName }}</h3>
+<p class="spot-date">{{ about.spotlightDate }}</p>
+{% for line in about.spotlightText %}<p>{{ line }}</p>{% endfor %}
+</article>
 											</section>
                                         <!-- END EDITABLE SECTION -->
                                     </div>

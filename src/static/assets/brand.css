@@ -352,3 +352,14 @@ body.page-about .spot-card { text-align: center; }
 .spot-card h3 { margin: 0 0 .25em; color: #00274c; font-weight: 800; font-size: 1.35em; }
 .spot-card .spot-date { color: #8a6a00; font-weight: 700; margin: 0 0 1em !important; }
 .spot-card p { margin: 0 auto .8em !important; max-width: 24em; line-height: 1.55; }
+
+/* Facebook feed on Events */
+.fb-embed { min-height: 120px; }
+.fb-embed iframe { display: block; border-radius: 12px; background: #fff; box-shadow: 0 2px 12px rgba(0,39,76,.12); }
+.fb-open { text-align: center; margin: 1.2em 0 0 !important; }
+
+/* Mobile: keep page content off the screen edges (About page had none) */
+@media (max-width: 980px) {
+  body.page-about .wrapper > .inner { padding-left: 20px !important; padding-right: 20px !important; }
+  body.page-about .wrapper.style2 article { padding: 0; }
+}

@@ -6,7 +6,6 @@ pageKey: events
 css: /assets-events/events.css
 bodyClass: homepage subpage
 navCurrent: events
-fbSdk: true
 eleventyComputed:
   heroImageUrl: "{{ events.heroImage | safe }}"
 gallery: ["t_panel","t_talk","t_tabling"]
@@ -25,7 +24,20 @@ gallery: ["t_panel","t_talk","t_tabling"]
 													<header class="major">
 														<h2>{{ events.socialHeading }}</h2>
 													</header>
-													<div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/AIAAatUMICH/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=&amp;container_width=367&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FAIAAatUMICH%2F&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false&amp;tabs=timeline"><span style="vertical-align: bottom; width: 340px; height: 131px;"><iframe name="f15d57cae7cc6b47c" width="1000px" height="1000px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="/assets-events/page.html" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: none; visibility: visible; width: 340px; height: 131px;" class=""></iframe></span></div>
+													<div id="fb-embed" class="fb-embed" data-page="https://www.facebook.com/AIAAatUMICH"></div>
+<p class="fb-open"><a class="join-btn" href="https://www.facebook.com/AIAAatUMICH" target="_blank" rel="noopener">Open on Facebook <span aria-hidden="true">&rarr;</span></a></p>
+<script>
+(function () {
+  var box = document.getElementById("fb-embed");
+  function build() {
+    var w = Math.max(280, Math.min(500, Math.floor(box.clientWidth || 340)));
+    var src = "https://www.facebook.com/plugins/page.php?href=" + encodeURIComponent(box.dataset.page) +
+      "&tabs=timeline&width=" + w + "&height=720&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true";
+    box.innerHTML = '<iframe title="Michigan AIAA on Facebook" src="' + src + '" width="' + w + '" height="720" style="border:0;overflow:hidden;max-width:100%" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe>';
+  }
+  build();
+})();
+</script>
 												</section>
 
 										</div>

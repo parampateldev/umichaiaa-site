@@ -24,9 +24,5 @@ eleventyComputed:
 <img class="team-photo" src="{{ team.photo }}" alt="{{ team.photoAlt }}">
 <p class="team-lead">{{ team.body }}</p>
 <p class="team-cta"><a class="join-btn" href="{{ site.joinLink }}">Join AIAA <span aria-hidden="true">&rarr;</span></a></p>
-<h3 class="team-others-h">Other subteams</h3>
-<ul class="team-others">
-{% for t in subteams.teams %}{% if t.id != team.id %}<li><a href="/subteams/{{ t.id }}.html">{{ t.name }}</a></li>{% endif %}{% endfor %}
-</ul>
 </article>
 </div></div></div></div></div>

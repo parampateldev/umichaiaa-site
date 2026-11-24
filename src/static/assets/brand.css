@@ -308,7 +308,7 @@ body.menu-open #site-header { background: transparent !important; box-shadow: no
 #footer-wrapper { margin-top: 0 !important; }
 .g-track { padding-bottom: 10px !important; }
 .g-track img { cursor: zoom-in; }
-.gallery-title { text-align: center; color: #ffcb05 !important; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 1.4em; font-size: 1.5em; }
+.gallery-title { text-align: center; color: #fff !important; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 1.4em; font-size: 1.5em; }
 .gallery-wrap { position: relative; }
 .g-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 28px; padding: 6px 28px 18px; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #ffcb05 rgba(255,255,255,.12); outline: none; }
 .g-track::-webkit-scrollbar { height: 8px; } .g-track::-webkit-scrollbar-track { background: rgba(255,255,255,.12); border-radius: 8px; } .g-track::-webkit-scrollbar-thumb { background: #ffcb05; border-radius: 8px; }

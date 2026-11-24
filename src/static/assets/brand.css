@@ -363,3 +363,10 @@ body.page-about .spot-card { text-align: center; }
   body.page-about .wrapper > .inner { padding-left: 20px !important; padding-right: 20px !important; }
   body.page-about .wrapper.style2 article { padding: 0; }
 }
+
+/* Mobile menu icon: navy on the white scrolled bar, white over the hero and when the menu is open */
+.sh-burger { color: #fff !important; }
+#site-header:not(.is-top) .sh-burger { color: #00274c !important; }
+.sh-burger span, .sh-burger span::before, .sh-burger span::after { background: currentColor !important; }
+body.menu-open .sh-burger { color: #fff !important; }
+body.menu-open .sh-burger span { background: transparent !important; }

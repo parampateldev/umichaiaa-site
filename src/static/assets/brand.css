@@ -329,3 +329,6 @@ body.menu-open #site-header { background: transparent !important; box-shadow: no
 .lb-x { top: 20px; right: 22px; font-size: 30px !important; }
 .lb-prev { left: 18px; top: calc(50% - 23px); } .lb-next { right: 18px; top: calc(50% - 23px); }
 @media (max-width: 736px) { .lb-prev, .lb-next { display: none; } }
+
+/* Hero tagline in New Title (Fontshare) */
+.hero-cta-text { font-family: "New Title", "Open Sans", sans-serif !important; font-weight: 700 !important; letter-spacing: .03em !important; font-size: clamp(2.1em, 4.6vw, 3.9em) !important; line-height: 1.05 !important; text-shadow: 0 3px 14px rgba(0,0,0,.55); }

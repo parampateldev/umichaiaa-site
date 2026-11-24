@@ -69,8 +69,8 @@ section.block{margin-top:24px}
 <img src="/assets/logo-darkblue.png" alt="AIAA Michigan">
 <h1>Admin sign in</h1>
 <p>Website administration for the Michigan AIAA student branch.</p>
-<label for="email">Username (email)</label>
-<input id="email" type="email" autocomplete="username" required>
+<label for="email">Username</label>
+<input id="email" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
 <label for="pw">Password</label>
 <input id="pw" type="password" autocomplete="current-password" required>
 <button class="btn" type="submit">Sign in</button>
@@ -127,6 +127,7 @@ section.block{margin-top:24px}
     subteams_pdc: "Professional Development", subteams_outreach: "Outreach", subteams_policy: "Public Policy", subteams_social: "Social" };
   var session = null, days = 7, docs = null;
 
+  function userToEmail(u) { u = u.trim().toLowerCase(); return u.indexOf("@") > -1 ? u : u + "@umichaiaa.web.app"; }
   function save(s) { session = s; try { s ? sessionStorage.setItem("aiaa_admin", JSON.stringify(s)) : sessionStorage.removeItem("aiaa_admin"); } catch (e) {} }
   function msg(t, ok) { var m = $("#login-msg"); m.textContent = t || ""; m.className = "msg " + (ok ? "ok" : "err"); }
   function post(url, body) {
@@ -148,14 +149,14 @@ section.block{margin-top:24px}
 
   $("#login-form").addEventListener("submit", function (e) {
     e.preventDefault(); msg("Signing in…", true);
-    post(AUTH + "signInWithPassword?key=" + KEY, { email: $("#email").value.trim(), password: $("#pw").value, returnSecureToken: true })
+    post(AUTH + "signInWithPassword?key=" + KEY, { email: userToEmail($("#email").value), password: $("#pw").value, returnSecureToken: true })
       .then(function (j) {
         save({ token: j.idToken, refresh: j.refreshToken, exp: Date.now() + (+j.expiresIn) * 1000, email: j.email });
         $("#pw").value = ""; start();
       }).catch(function (er) { msg(friendly(er.message)); });
   });
   $("#forgot").addEventListener("click", function () {
-    var em = $("#email").value.trim(); if (!em) { msg("Type your email above first."); return; }
+    var em = userToEmail($("#email").value); if (!$("#email").value.trim()) { msg("Type your username above first."); return; }
     post(AUTH + "sendOobCode?key=" + KEY, { requestType: "PASSWORD_RESET", email: em }).then(function () { msg("If that email is an admin account, a reset link is on its way.", true); }).catch(function () { msg("Couldn't send the reset email."); });
   });
   $("#logout").addEventListener("click", function () { save(null); $("#app").hidden = true; $("#login").hidden = false; });

@@ -29,6 +29,7 @@ input:focus{outline:3px solid #ffcb0566;border-color:var(--navy)}
 .btn.maize{background:var(--maize);color:var(--navy)}
 .btn.ghost{background:transparent;color:inherit;border:1px solid var(--line)}
 .login-card .btn{width:100%;margin-top:20px}
+.gbtn{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;color:#1f1f1f;border:1px solid #cfd7e0;border-radius:999px;padding:12px 18px;font-weight:700;cursor:pointer;box-shadow:0 1px 2px #0002}.gbtn:hover{background:#f6f8fb}
 .link{background:none;border:0;color:var(--navy);text-decoration:underline;cursor:pointer;padding:0;font-weight:600}
 .msg{min-height:20px;margin-top:12px;font-size:14px}
 .err{color:#b42318}.ok{color:#1a7a3c}
@@ -65,18 +66,14 @@ section.block{margin-top:24px}
 </head>
 <body>
 <section id="login" class="login">
-<form id="login-form" class="login-card" autocomplete="on">
+<div class="login-card">
 <img src="/assets/logo-darkblue.png" alt="AIAA Michigan">
 <h1>Admin sign in</h1>
 <p>Website administration for the Michigan AIAA student branch.</p>
-<label for="email">Username</label>
-<input id="email" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
-<label for="pw">Password</label>
-<input id="pw" type="password" autocomplete="current-password" required>
-<button class="btn" type="submit">Sign in</button>
+<button id="google" class="gbtn" type="button"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-17.1z"/><path fill="#FBBC05" d="M10.5 28.7c-.5-1.4-.8-2.9-.8-4.7s.3-3.3.8-4.7l-7.9-6.1C.9 16.4 0 20.1 0 24s.9 7.6 2.6 10.8l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.3-8.5 2.3-6.3 0-11.6-4.1-13.5-9.8l-7.9 6.1C6.5 42.6 14.6 48 24 48z"/></svg>Sign in with Google</button>
 <div id="login-msg" class="msg" role="alert"></div>
-<button type="button" id="forgot" class="link">Forgot password?</button>
-</form>
+<p class="note" style="margin:14px 0 0">Only approved club accounts can sign in.</p>
+</div>
 </section>
 
 <div id="app" hidden>
@@ -118,57 +115,50 @@ section.block{margin-top:24px}
 </main>
 </div>
 
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 <script>
 (function () {
   var KEY = "AIzaSyCIYSw-jdZAlp0WSoHeGTnAipcsgTI1dLI", PROJECT = "housegames-parampatel";
-  var AUTH = "https://identitytoolkit.googleapis.com/v1/accounts:";
+  var ALLOWED = ["theparampatel@gmail.com", "parampat@umich.edu"];
   var $ = function (s) { return document.querySelector(s); };
   var NAMES = { home: "Home", events: "Events", officers: "About Us (officers)", contact: "Contact Us", subteams: "Subteams", history: "History",
     subteams_pdc: "Professional Development", subteams_outreach: "Outreach", subteams_policy: "Public Policy", subteams_social: "Social" };
-  var session = null, days = 7, docs = null;
+  var days = 7, docs = null, user = null;
+  firebase.initializeApp({ apiKey: KEY, authDomain: PROJECT + ".firebaseapp.com", projectId: PROJECT });
+  var auth = firebase.auth();
 
-  function userToEmail(u) { u = u.trim().toLowerCase(); return u.indexOf("@") > -1 ? u : u + "@umichaiaa.web.app"; }
-  function save(s) { session = s; try { s ? sessionStorage.setItem("aiaa_admin", JSON.stringify(s)) : sessionStorage.removeItem("aiaa_admin"); } catch (e) {} }
   function msg(t, ok) { var m = $("#login-msg"); m.textContent = t || ""; m.className = "msg " + (ok ? "ok" : "err"); }
-  function post(url, body) {
-    return fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
-      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error((j.error && j.error.message) || "Request failed"); return j; }); });
-  }
-  function friendly(m) {
-    if (/INVALID_LOGIN|INVALID_PASSWORD|EMAIL_NOT_FOUND|INVALID_EMAIL/.test(m)) return "That username or password isn't right.";
-    if (/TOO_MANY/.test(m)) return "Too many tries. Wait a few minutes and try again.";
-    return "Couldn't sign in. Please try again.";
-  }
-  function refresh() {
-    if (session.exp > Date.now() + 60000) return Promise.resolve();
-    return fetch("https://securetoken.googleapis.com/v1/token?key=" + KEY, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: "grant_type=refresh_token&refresh_token=" + encodeURIComponent(session.refresh) })
-      .then(function (r) { if (!r.ok) throw new Error("expired"); return r.json(); })
-      .then(function (j) { session.token = j.id_token; session.refresh = j.refresh_token; session.exp = Date.now() + (+j.expires_in) * 1000; save(session); });
-  }
+  function showLogin(t) { $("#app").hidden = true; $("#login").hidden = false; msg(t); }
 
-  $("#login-form").addEventListener("submit", function (e) {
-    e.preventDefault(); msg("Signing in…", true);
-    post(AUTH + "signInWithPassword?key=" + KEY, { email: userToEmail($("#email").value), password: $("#pw").value, returnSecureToken: true })
-      .then(function (j) {
-        save({ token: j.idToken, refresh: j.refreshToken, exp: Date.now() + (+j.expiresIn) * 1000, email: j.email });
-        $("#pw").value = ""; start();
-      }).catch(function (er) { msg(friendly(er.message)); });
+  $("#google").addEventListener("click", function () {
+    msg("");
+    var provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
+    auth.signInWithPopup(provider).catch(function (er) {
+      if (er.code === "auth/popup-closed-by-user" || er.code === "auth/cancelled-popup-request") return;
+      msg(er.code === "auth/popup-blocked" ? "Your browser blocked the sign-in window. Allow pop-ups for this site and try again." : "Couldn't sign in with Google. Please try again.");
+    });
   });
-  $("#forgot").addEventListener("click", function () {
-    var em = userToEmail($("#email").value); if (!$("#email").value.trim()) { msg("Type your username above first."); return; }
-    post(AUTH + "sendOobCode?key=" + KEY, { requestType: "PASSWORD_RESET", email: em }).then(function () { msg("If that email is an admin account, a reset link is on its way.", true); }).catch(function () { msg("Couldn't send the reset email."); });
-  });
-  $("#logout").addEventListener("click", function () { save(null); $("#app").hidden = true; $("#login").hidden = false; });
+  $("#logout").addEventListener("click", function () { auth.signOut(); });
   $("#range").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; days = +b.dataset.d;
     [].forEach.call($("#range").children, function (x) { x.classList.toggle("on", x === b); }); if (docs) render(); });
 
+  auth.onAuthStateChanged(function (u) {
+    if (!u) { user = null; showLogin(); return; }
+    var email = (u.email || "").toLowerCase();
+    if (ALLOWED.indexOf(email) < 0 || !u.emailVerified) {
+      auth.signOut(); showLogin(email + " isn't on the admin list. Sign in with an approved account."); return;
+    }
+    user = u; start();
+  });
+
   function load() {
-    return refresh().then(function () {
-      return fetch("https://firestore.googleapis.com/v1/projects/" + PROJECT + "/databases/(default)/documents/aiaa_stats?pageSize=200", { headers: { Authorization: "Bearer " + session.token } });
+    return user.getIdToken().then(function (token) {
+      return fetch("https://firestore.googleapis.com/v1/projects/" + PROJECT + "/databases/(default)/documents/aiaa_stats?pageSize=200", { headers: { Authorization: "Bearer " + token } });
     }).then(function (r) {
-      if (r.status === 403) throw new Error("This account isn't on the admin list yet. Ask the site owner to add " + session.email + ".");
-      if (!r.ok) throw new Error("Stats aren't switched on yet (the database still needs to be enabled).");
+      if (r.status === 403) throw new Error("This account isn't on the admin list yet. Ask the site owner to add " + user.email + ".");
+      if (!r.ok) throw new Error("Stats aren't available right now. Try again in a minute.");
       return r.json();
     }).then(function (j) {
       docs = {}; (j.documents || []).forEach(function (d) {
@@ -205,13 +195,9 @@ section.block{margin-top:24px}
   }
 
   function start() {
-    $("#login").hidden = true; $("#app").hidden = false; $("#who").textContent = session.email;
-    load().catch(function (er) {
-      if (er.message === "expired") { save(null); $("#app").hidden = true; $("#login").hidden = false; msg("Please sign in again."); return; }
-      $("#stat-note").textContent = er.message; $("#stat-note").style.color = "#b42318";
-    });
+    $("#login").hidden = true; $("#app").hidden = false; $("#who").textContent = user.email;
+    load().catch(function (er) { $("#stat-note").textContent = er.message; $("#stat-note").style.color = "#b42318"; });
   }
-  try { var s = JSON.parse(sessionStorage.getItem("aiaa_admin") || "null"); if (s && s.refresh) { session = s; start(); } } catch (e) {}
 })();
 </script>
 </body>

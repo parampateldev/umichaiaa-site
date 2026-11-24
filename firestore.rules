@@ -5,9 +5,8 @@ service cloud.firestore {
   match /databases/{database}/documents {
     function isAdmin() {
       return request.auth != null
-        && ((request.auth.token.email_verified == true
-              && request.auth.token.email in ['theparampatel@gmail.com', 'umichaiaa@gmail.com'])
-            || request.auth.token.email == 'aiaa-admin@umichaiaa.web.app');
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['theparampatel@gmail.com', 'parampat@umich.edu'];
     }
     function metrics() {
       return ['pv_home', 'pv_events', 'pv_officers', 'pv_contact', 'pv_subteams', 'pv_history',

@@ -341,5 +341,5 @@ body, body * { font-family: "Satoshi", -apple-system, "Segoe UI", Helvetica, Ari
 body.page-about .wrapper.style2 { padding: 2.4em 0 .6em !important; }
 body.page-about .wrapper.style3 { padding: 1.6em 0 3em !important; }
 body.page-about .wrapper.style2 article > :last-child { margin-bottom: 0 !important; }
-body.page-about .wrapper.style3 h2 { border-bottom: 1px solid #dbdbdb; margin: 0 0 1.4em !important; padding-bottom: .55em; }
-body.page-about .wrapper.style3 h2::after { content: ""; display: block; border-top: 1px solid #dbdbdb; height: 8px; margin-bottom: -.55em; position: relative; top: calc(.55em + 1px); }
+/* double-line divider under the intro paragraph, above Meet Our Officers / Member Spotlight */
+body.page-about .wrapper.style2 article::after { content: ""; display: block; margin-top: 1.8em; border-top: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; height: 8px; }

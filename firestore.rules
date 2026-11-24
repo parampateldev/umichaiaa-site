@@ -1,0 +1,27 @@
+rules_version = '2';
+// Michigan AIAA site telemetry. Anyone's browser may add +1 style counters for the whitelisted metrics below
+// (no personal data, no cookies). Only signed-in, email-verified admins may read the totals.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['theparampatel@gmail.com', 'umichaiaa@gmail.com'];
+    }
+    function metrics() {
+      return ['pv_home', 'pv_events', 'pv_officers', 'pv_contact', 'pv_subteams', 'pv_history',
+              'pv_subteams_pdc', 'pv_subteams_outreach', 'pv_subteams_policy', 'pv_subteams_social',
+              'dev_mobile', 'dev_desktop', 'click_join', 'click_gallery', 'visits'];
+    }
+    match /aiaa_stats/{day} {
+      allow read: if isAdmin();
+      allow create: if day.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+        && request.resource.data.keys().hasOnly(metrics())
+        && request.resource.data.keys().size() <= 4;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(metrics())
+        && request.resource.data.diff(resource.data).affectedKeys().size() <= 4;
+      allow delete: if false;
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

@@ -1,0 +1,217 @@
+---
+permalink: /admin/index.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Michigan AIAA Admin</title>
+<link rel="icon" href="/favicon.ico?v=3" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=3">
+<style>
+:root{--navy:#00274c;--maize:#ffcb05;--ink:#17212b;--muted:#5d6b7a;--line:#dfe4ea;--paper:#f4f6f9;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--ink:#e8edf3;--muted:#9fb0c1;--line:#26405c;--paper:#0a1a2d;--card:#10253d}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+button,input{font:inherit}
+[hidden]{display:none!important}
+.login{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,#00274c,#0a3a6e)}
+.login-card{width:min(400px,100%);background:#fff;color:#17212b;border-radius:16px;padding:34px;box-shadow:0 20px 60px #0006}
+.login-card img{height:44px;display:block;margin:0 0 18px}
+.login-card h1{margin:0 0 4px;color:var(--navy);font-size:24px}
+.login-card p{margin:0 0 20px;color:#5d6b7a}
+label{display:block;font-weight:700;font-size:14px;margin:14px 0 6px}
+input{width:100%;border:1px solid #cfd7e0;border-radius:8px;padding:11px 12px;background:#fff;color:#17212b}
+input:focus{outline:3px solid #ffcb0566;border-color:var(--navy)}
+.btn{border:0;border-radius:999px;padding:11px 22px;font-weight:800;cursor:pointer;background:var(--navy);color:#fff}
+.btn.maize{background:var(--maize);color:var(--navy)}
+.btn.ghost{background:transparent;color:inherit;border:1px solid var(--line)}
+.login-card .btn{width:100%;margin-top:20px}
+.link{background:none;border:0;color:var(--navy);text-decoration:underline;cursor:pointer;padding:0;font-weight:600}
+.msg{min-height:20px;margin-top:12px;font-size:14px}
+.err{color:#b42318}.ok{color:#1a7a3c}
+header.bar{background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;gap:12px;flex-wrap:wrap}
+header.bar strong{font-size:18px;letter-spacing:.02em}
+header.bar span{opacity:.8;font-size:14px;margin-right:12px}
+main{max-width:1060px;margin:0 auto;padding:26px 20px 70px}
+h2{color:var(--navy);margin:0 0 12px;font-size:20px}
+@media (prefers-color-scheme:dark){h2{color:var(--maize)}}
+.grid{display:grid;gap:16px}
+.two{grid-template-columns:1fr 1fr}.four{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.stat b{display:block;font-size:34px;color:var(--navy);line-height:1.1}
+@media (prefers-color-scheme:dark){.stat b{color:var(--maize)}}
+.stat span{color:var(--muted);font-size:14px}
+.steps{margin:0;padding-left:20px;line-height:1.8}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.actions a{text-decoration:none;display:inline-block}
+.range{display:flex;gap:6px;margin:0 0 14px}
+.range button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:700}
+.range button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+svg.chart{width:100%;height:190px;display:block}
+.bars rect{fill:var(--navy)}
+@media (prefers-color-scheme:dark){.bars rect{fill:var(--maize)}}
+.axis{fill:var(--muted);font-size:11px}
+table{width:100%;border-collapse:collapse}
+td,th{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);font-size:15px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.pct{height:8px;border-radius:8px;background:var(--line);overflow:hidden}.pct i{display:block;height:100%;background:var(--maize)}
+.note{color:var(--muted);font-size:13px;margin-top:10px}
+section.block{margin-top:24px}
+@media(max-width:820px){.four{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section id="login" class="login">
+<form id="login-form" class="login-card" autocomplete="on">
+<img src="/assets/logo-darkblue.png" alt="AIAA Michigan">
+<h1>Admin sign in</h1>
+<p>Website administration for the Michigan AIAA student branch.</p>
+<label for="email">Username (email)</label>
+<input id="email" type="email" autocomplete="username" required>
+<label for="pw">Password</label>
+<input id="pw" type="password" autocomplete="current-password" required>
+<button class="btn" type="submit">Sign in</button>
+<div id="login-msg" class="msg" role="alert"></div>
+<button type="button" id="forgot" class="link">Forgot password?</button>
+</form>
+</section>
+
+<div id="app" hidden>
+<header class="bar"><strong>Michigan AIAA Admin</strong><div><span id="who"></span><button id="logout" class="btn maize" type="button">Sign out</button></div></header>
+<main>
+<section>
+<h2>Update the website</h2>
+<div class="card">
+<ol class="steps">
+<li>Press <b>Open the editor</b> and sign in (it opens in a new tab).</li>
+<li>Pick the page, change the words or photos, then press <b>Publish</b>.</li>
+<li>Press <b>Make changes live</b>. The site updates in about a minute.</li>
+</ol>
+<div class="actions">
+<a class="btn maize" href="https://umichaiaa.sanity.studio/" target="_blank" rel="noopener">Open the editor</a>
+<a class="btn" href="https://github.com/parampateldev/umichaiaa-site/actions/workflows/deploy.yml" target="_blank" rel="noopener">Make changes live</a>
+<a class="btn ghost" href="/" target="_blank" rel="noopener">View the site</a>
+</div>
+<p class="note">On the GitHub page, press <b>Run workflow</b>, then <b>Run workflow</b> again. Only people the club has added to the site's GitHub project can do this step.</p>
+</div>
+</section>
+
+<section class="block">
+<h2>Visitors</h2>
+<div class="range" id="range"><button data-d="7" class="on">7 days</button><button data-d="30">30 days</button><button data-d="90">90 days</button></div>
+<div class="grid four">
+<div class="card stat"><b id="s-views">–</b><span>Page views</span></div>
+<div class="card stat"><b id="s-visits">–</b><span>Visits</span></div>
+<div class="card stat"><b id="s-join">–</b><span>Join button clicks</span></div>
+<div class="card stat"><b id="s-gal">–</b><span>Gallery photos opened</span></div>
+</div>
+<div class="card" style="margin-top:16px"><h2>Page views per day</h2><svg id="chart" class="chart" role="img" aria-label="Page views per day"></svg></div>
+<div class="grid two" style="margin-top:16px">
+<div class="card"><h2>Most visited pages</h2><table id="pages"></table></div>
+<div class="card"><h2>Phone vs. computer</h2><table id="devices"></table></div>
+</div>
+<p class="note" id="stat-note">Stats are anonymous daily counts. No cookies, names or IP addresses are stored. A "visit" is one browser session; a page view counts once per page per session.</p>
+</section>
+</main>
+</div>
+
+<script>
+(function () {
+  var KEY = "AIzaSyCIYSw-jdZAlp0WSoHeGTnAipcsgTI1dLI", PROJECT = "housegames-parampatel";
+  var AUTH = "https://identitytoolkit.googleapis.com/v1/accounts:";
+  var $ = function (s) { return document.querySelector(s); };
+  var NAMES = { home: "Home", events: "Events", officers: "About Us (officers)", contact: "Contact Us", subteams: "Subteams", history: "History",
+    subteams_pdc: "Professional Development", subteams_outreach: "Outreach", subteams_policy: "Public Policy", subteams_social: "Social" };
+  var session = null, days = 7, docs = null;
+
+  function save(s) { session = s; try { s ? sessionStorage.setItem("aiaa_admin", JSON.stringify(s)) : sessionStorage.removeItem("aiaa_admin"); } catch (e) {} }
+  function msg(t, ok) { var m = $("#login-msg"); m.textContent = t || ""; m.className = "msg " + (ok ? "ok" : "err"); }
+  function post(url, body) {
+    return fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error((j.error && j.error.message) || "Request failed"); return j; }); });
+  }
+  function friendly(m) {
+    if (/INVALID_LOGIN|INVALID_PASSWORD|EMAIL_NOT_FOUND|INVALID_EMAIL/.test(m)) return "That username or password isn't right.";
+    if (/TOO_MANY/.test(m)) return "Too many tries. Wait a few minutes and try again.";
+    return "Couldn't sign in. Please try again.";
+  }
+  function refresh() {
+    if (session.exp > Date.now() + 60000) return Promise.resolve();
+    return fetch("https://securetoken.googleapis.com/v1/token?key=" + KEY, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: "grant_type=refresh_token&refresh_token=" + encodeURIComponent(session.refresh) })
+      .then(function (r) { if (!r.ok) throw new Error("expired"); return r.json(); })
+      .then(function (j) { session.token = j.id_token; session.refresh = j.refresh_token; session.exp = Date.now() + (+j.expires_in) * 1000; save(session); });
+  }
+
+  $("#login-form").addEventListener("submit", function (e) {
+    e.preventDefault(); msg("Signing in…", true);
+    post(AUTH + "signInWithPassword?key=" + KEY, { email: $("#email").value.trim(), password: $("#pw").value, returnSecureToken: true })
+      .then(function (j) {
+        save({ token: j.idToken, refresh: j.refreshToken, exp: Date.now() + (+j.expiresIn) * 1000, email: j.email });
+        $("#pw").value = ""; start();
+      }).catch(function (er) { msg(friendly(er.message)); });
+  });
+  $("#forgot").addEventListener("click", function () {
+    var em = $("#email").value.trim(); if (!em) { msg("Type your email above first."); return; }
+    post(AUTH + "sendOobCode?key=" + KEY, { requestType: "PASSWORD_RESET", email: em }).then(function () { msg("If that email is an admin account, a reset link is on its way.", true); }).catch(function () { msg("Couldn't send the reset email."); });
+  });
+  $("#logout").addEventListener("click", function () { save(null); $("#app").hidden = true; $("#login").hidden = false; });
+  $("#range").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; days = +b.dataset.d;
+    [].forEach.call($("#range").children, function (x) { x.classList.toggle("on", x === b); }); if (docs) render(); });
+
+  function load() {
+    return refresh().then(function () {
+      return fetch("https://firestore.googleapis.com/v1/projects/" + PROJECT + "/databases/(default)/documents/aiaa_stats?pageSize=200", { headers: { Authorization: "Bearer " + session.token } });
+    }).then(function (r) {
+      if (r.status === 403) throw new Error("This account isn't on the admin list yet. Ask the site owner to add " + session.email + ".");
+      if (!r.ok) throw new Error("Stats aren't switched on yet (the database still needs to be enabled).");
+      return r.json();
+    }).then(function (j) {
+      docs = {}; (j.documents || []).forEach(function (d) {
+        var day = d.name.split("/").pop(), o = {};
+        Object.keys(d.fields || {}).forEach(function (k) { o[k] = +(d.fields[k].integerValue || 0); }); docs[day] = o;
+      }); render();
+    });
+  }
+
+  function dayList(n) {
+    var out = [], now = new Date();
+    for (var i = n - 1; i >= 0; i--) { var d = new Date(now.getTime() - i * 864e5); out.push(d.toLocaleDateString("en-CA", { timeZone: "America/Detroit" })); }
+    return out;
+  }
+  function render() {
+    var list = dayList(days), tot = {}, perDay = list.map(function (d) {
+      var o = docs[d] || {}, pv = 0;
+      Object.keys(o).forEach(function (k) { tot[k] = (tot[k] || 0) + o[k]; if (k.indexOf("pv_") === 0) pv += o[k]; });
+      return pv;
+    });
+    var views = perDay.reduce(function (a, b) { return a + b; }, 0);
+    $("#s-views").textContent = views; $("#s-visits").textContent = tot.visits || 0;
+    $("#s-join").textContent = tot.click_join || 0; $("#s-gal").textContent = tot.click_gallery || 0;
+    // chart
+    var W = 720, H = 190, max = Math.max.apply(null, perDay.concat([1])), bw = W / list.length, svg = "<g class='bars'>";
+    perDay.forEach(function (v, i) { var h = Math.round((v / max) * (H - 36)); svg += "<rect x='" + (i * bw + bw * .15) + "' y='" + (H - 22 - h) + "' width='" + bw * .7 + "' height='" + h + "' rx='3'><title>" + list[i] + ": " + v + "</title></rect>"; });
+    svg += "</g><text class='axis' x='0' y='" + (H - 5) + "'>" + list[0].slice(5) + "</text><text class='axis' x='" + W + "' y='" + (H - 5) + "' text-anchor='end'>" + list[list.length - 1].slice(5) + "</text><text class='axis' x='0' y='12'>peak " + max + "</text>";
+    $("#chart").setAttribute("viewBox", "0 0 " + W + " " + H); $("#chart").setAttribute("preserveAspectRatio", "none"); $("#chart").innerHTML = svg;
+    // pages
+    var rows = Object.keys(tot).filter(function (k) { return k.indexOf("pv_") === 0; }).map(function (k) { return [k.slice(3), tot[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
+    $("#pages").innerHTML = rows.length ? rows.map(function (r) { return "<tr><td>" + (NAMES[r[0]] || r[0]) + "</td><td class='n'>" + r[1] + "</td></tr>"; }).join("") : "<tr><td>No visits recorded yet.</td></tr>";
+    var m = tot.dev_mobile || 0, c = tot.dev_desktop || 0, t = m + c || 1;
+    $("#devices").innerHTML = [["Phone", m], ["Computer", c]].map(function (r) { return "<tr><td>" + r[0] + "</td><td class='n'>" + Math.round(r[1] / t * 100) + "%</td></tr><tr><td colspan='2'><div class='pct'><i style='width:" + (r[1] / t * 100) + "%'></i></div></td></tr>"; }).join("");
+  }
+
+  function start() {
+    $("#login").hidden = true; $("#app").hidden = false; $("#who").textContent = session.email;
+    load().catch(function (er) {
+      if (er.message === "expired") { save(null); $("#app").hidden = true; $("#login").hidden = false; msg("Please sign in again."); return; }
+      $("#stat-note").textContent = er.message; $("#stat-note").style.color = "#b42318";
+    });
+  }
+  try { var s = JSON.parse(sessionStorage.getItem("aiaa_admin") || "null"); if (s && s.refresh) { session = s; start(); } } catch (e) {}
+})();
+</script>
+</body>
+</html>

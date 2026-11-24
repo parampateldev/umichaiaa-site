@@ -132,15 +132,8 @@ section.block{margin-top:24px}
   function msg(t, ok) { var m = $("#login-msg"); m.textContent = t || ""; m.className = "msg " + (ok ? "ok" : "err"); }
   function showLogin(t) { $("#app").hidden = true; $("#login").hidden = false; msg(t); }
 
-  $("#google").addEventListener("click", function () {
-    msg("");
-    var provider = new firebase.auth.GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: "select_account" });
-    auth.signInWithPopup(provider).catch(function (er) {
-      if (er.code === "auth/popup-closed-by-user" || er.code === "auth/cancelled-popup-request") return;
-      msg(er.code === "auth/popup-blocked" ? "Your browser blocked the sign-in window. Allow pop-ups for this site and try again." : "Couldn't sign in with Google. Please try again.");
-    });
-  });
+  // Sign-in is switched off for now: the button stays, clicking does nothing.
+  $("#google").addEventListener("click", function (e) { e.preventDefault(); });
   $("#logout").addEventListener("click", function () { auth.signOut(); });
   $("#range").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; days = +b.dataset.d;
     [].forEach.call($("#range").children, function (x) { x.classList.toggle("on", x === b); }); if (docs) render(); });

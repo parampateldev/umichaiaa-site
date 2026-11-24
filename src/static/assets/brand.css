@@ -370,3 +370,5 @@ body.page-about .spot-card { text-align: center; }
 .sh-burger span, .sh-burger span::before, .sh-burger span::after { background: currentColor !important; }
 body.menu-open .sh-burger { color: #fff !important; }
 body.menu-open .sh-burger span { background: transparent !important; }
+body.menu-open #site-header .sh-burger { color: #fff !important; }
+body.menu-open #site-header .sh-burger span { background: transparent !important; }
